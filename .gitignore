@@ -1,3 +1,14 @@
+# Telemetry, Observation, Evaluation
+data/*
+!data/.gitkeep
+eval/*
+!eval/.gitkeep
+obs/*
+!obs/.gitkeep
+
+# Mac
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
