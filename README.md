@@ -39,6 +39,24 @@ pip install -r requirements.txt
 
 The telemetry data can be download from the [Google Drive](https://drive.google.com/drive/folders/1wGiEnu4OkWrjPxfx5ZTROnU37-5UDoPM?usp=drive_link). Once you have download the telemetry dataset, please put them into the path `data/` (which is empty now).
 
+The directory structure of the data is:
+
+```
+.
+├── {SYSTEM}
+│   ├── query.csv
+│   ├── record.csv
+│   └── telemetry
+│       ├── {DATE}
+│       │   ├── log
+│       │   ├── metric
+│       │   └── trace
+│       └── ... 
+└── ...
+```
+
+where the `{SYSTEM}` can be `Telecom`, `Bank`, or `Market`, and the `{DATE}` format is `{YYYY_MM_DD}`.
+
 ### 🖊️ Step 2: Configure the LLMs
 
 Before running RCA-Agent and other baselines on OpenRCA, you need to provide your API configurations. Taking OpenAI as an example, you can configure `api_config.yaml` file as follows. 
@@ -71,10 +89,18 @@ python scripts/run_agent.py --dataset Market/cloudbed-2
 ```
 
 ## 📚 Citation
-Our paper could be found [TODO]. 
+
 If you use OpenRCA in your research, please cite our paper:
+
 ```
-{TODO}
+@inproceedings{
+xu2025openrca,
+title={OpenRCA: Can Large Language Models Locate the Root Cause of Software Failures?},
+author={Xu, Junjielong and Zhang, Qinan and Zhong, Zhiqing and He, Shilin and Zhang, Chaoyun and Lin, Qingwei and Pei, Dan and He, Pinjia and Zhang, Dongmei and Zhang, Qi},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=M4qNIzQYpd}
+}
 ```
 
 ## Trademarks
