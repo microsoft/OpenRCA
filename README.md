@@ -71,21 +71,21 @@ API_KEY:  "sk-xxxxxxxxxxxxxx"
 
 ```bash
 python scripts/{SCRIPTS} --dataset {DATASET_NAME}
-# Optional scripts: run_agent.py, run_baseline_balanced.py, run_baseline_oracle.py
+# Optional scripts: run_agent_standard.py, run_baseline_balanced.py, run_baseline_oracle.py
 # Optional datasets: Telecom, Bank, Market/cloudbed-1, Market/cloudbed-2
 ```
 
-For example, if f you want to evaluate RCA-Agent on Bank dataset, you should use the following command:
+For example, if you want to evaluate RCA-Agent on Bank dataset, you should use the following command:
 
 ```bash
-python scripts/run_agent.py --dataset Bank
+python scripts/run_agent_standard.py --dataset Bank
 ```
 
 Note that the telemetry of two Market cloudbed service group are collected separately. For example, if you want to evaluate RCA-Agent on the whole Market dataset, you should use the following command:
 
 ```bash
-python scripts/run_agent.py --dataset Market/cloudbed-1
-python scripts/run_agent.py --dataset Market/cloudbed-2
+python scripts/run_agent_standard.py --dataset Market/cloudbed-1
+python scripts/run_agent_standard.py --dataset Market/cloudbed-2
 ```
 
 ## 📚 Citation
