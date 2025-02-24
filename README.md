@@ -95,7 +95,7 @@ python -m main.evaluate \
         dataset/Market/cloudbed-2/query.csv \
         dataset/Telecom/query.csv \
     -r \
-        agent_claude.csv
+        test/agent_claude.csv
 ```
 
 ### 🚩 Reproduction

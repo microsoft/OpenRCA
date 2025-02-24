@@ -139,6 +139,8 @@ def file_evaluate(prediction_file:str, query_file:str, report_file:str):
     if os.path.exists(report_file):
         eval_df.to_csv(report_file, mode='a', header=False, index=False)
     else:
+        if not os.path.exists(os.path.dirname(report_file)):
+            os.makedirs(os.path.dirname(report_file))
         eval_df.to_csv(report_file, index=False)
 
 
