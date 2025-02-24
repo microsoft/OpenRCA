@@ -12,13 +12,13 @@ OpenRCA is a benchmark for assessing LLMs' root cause analysis ability in a soft
 
 </div>
 
-We also introduce RCA-agent as a baseline for OpenRCA. By using Python for data retrieval and analysis, the model avoids processing overly long contexts, enabling it to focus on reasoning and scale effectively for extensive telemetry.
+We also introduce RCA-agent as a baseline for OpenRCA. By using Python for data retrieval and analysis, the model avoids processing overly long contexts, enabling it to focus on reasoning and scalable for extensive telemetry.
 
 <img src="./.asset/rcaagent.png"/> 
 
 ## ✨ Quick Start
 
-| ⚠️ Since the OpenRCA dataset includes a large amount of telemetry and RCA-agent requires extensive memory operations, we recommend using a device with at least 80GB of storage space and 32GB of memory.
+> ⚠️ Since the OpenRCA dataset includes a large amount of telemetry and RCA-agent requires extensive memory operations, we recommend using a device with at least 80GB of storage space and 32GB of memory.
 
 ### 🛠️ Installation
 
