@@ -155,7 +155,7 @@ python -m main.generate -d True
 
 If you use OpenRCA in your research, please cite our paper:
 
-```
+```bibtex
 @inproceedings{
 xu2025openrca,
 title={OpenRCA: Can Large Language Models Locate the Root Cause of Software Failures?},
