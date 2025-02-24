@@ -6,23 +6,21 @@
 
 </div>
 
-OpenRCA is a public benchmark for assessing LLMs' root cause analysis ability in a practical software operating scenario. It consists of 335 failure cases collected from three heterogeneous software systems deployed in the real world, accompanied by over 68 GB of de-identified telemetry data. Each failure case is paired with a query in natural language, requiring LLMs to analyze massive telemetry data to generate the corresponding root causes elements, including time, component, and reason. The process demands LLMs understand intricate system dependencies and conduct complex reasoning across telemetry data of diverse types, such as time series, dependency graphs, and semi-structured text.
+OpenRCA is a benchmark for assessing LLMs' root cause analysis ability in a software operating scenario. When given a natural language query, LLMs need to analyze large volumes of telemetry data to identify the relevant root cause elements. This process requires the models to understand complex system dependencies and perform comprehensive reasoning across various types of telemetry data, including KPI time series, dependency trace graphs, and semi-structured log text.
 
 <img src="./.asset/openrca.png"/> 
 
 </div>
 
-To outline a possible direction for solving OpenRCA tasks, we further developed RCA-agent, a multi-agent system based on program synthesis and execution. By utilizing Python for data retrieval and analysis, the model is freed from processing large telemetry as an overly long context. This allows the model to focus solely on reasoning and make it scalable for massive telemetry. With RCA-agent, the accuracy of Claude 3.5 is further improved to 11.34%.
+We also introduce RCA-agent as a baseline for OpenRCA. By using Python for data retrieval and analysis, the model avoids processing overly long contexts, enabling it to focus on reasoning and scale effectively for extensive telemetry.
 
 <img src="./.asset/rcaagent.png"/> 
 
-## 🆕 News
-
-- 📅2024-11-04: OpenRCA is released on GitHub🎈. 
-
 ## ✨ Quick Start
 
-### 🛠️ Step 1: Installation
+| ⚠️ Since the OpenRCA dataset includes a large amount of telemetry and RCA-agent requires extensive memory operations, we recommend using a device with at least 80GB of storage space and 32GB of memory.
+
+### 🛠️ Installation
 
 OpenRCA requires **Python >= 3.10**. It can be installed by running the following command:
 ```bash
@@ -37,7 +35,7 @@ cd OpenRCA
 pip install -r requirements.txt
 ```
 
-The telemetry data can be download from the [Google Drive](https://drive.google.com/drive/folders/1wGiEnu4OkWrjPxfx5ZTROnU37-5UDoPM?usp=drive_link). Once you have download the telemetry dataset, please put them into the path `data/` (which is empty now).
+The telemetry data can be download from [Google Drive](https://drive.google.com/drive/folders/1wGiEnu4OkWrjPxfx5ZTROnU37-5UDoPM?usp=drive_link). Once you have download the telemetry dataset, please put them into the path `dataset/` (which is empty now).
 
 The directory structure of the data is:
 
@@ -57,9 +55,52 @@ The directory structure of the data is:
 
 where the `{SYSTEM}` can be `Telecom`, `Bank`, or `Market`, and the `{DATE}` format is `{YYYY_MM_DD}`.
 
-### 🖊️ Step 2: Configure the LLMs
+### 🖊️ Evaluation
 
-Before running RCA-Agent and other baselines on OpenRCA, you need to provide your API configurations. Taking OpenAI as an example, you can configure `api_config.yaml` file as follows. 
+Using following command to evaluate:
+
+```bash
+python -m main.evaluate \
+    -p [prediction csv files to evaluate] \
+    -q [groundtruth csv files to evaluate] \
+    -r [report csv file to save]
+```
+
+Note that the prediction CSV file must include at least a "prediction" field for valid evaluation (extra fields are allowed). Each prediction should be a JSON-like string containing all required elements for each query (extra elements are allowed). If there are multiple failures, list them in chronological order (e.g., 1, 2, 3, ...):
+
+
+```json
+{
+    "1": {
+        "root cause occurrence datetime": "[%Y-%m-%d %H:%M:%S]",
+        "root cause component": "[COMPONENT]",
+        "root cause reason": "[REASON]"
+    }, 
+    ...
+}
+```
+
+For example, to evaluate the archived predictions of RCA-agent (Claude ver.), you can use the following command:
+
+```bash
+python -m main.evaluate \
+    -p \
+        rca/archive/agent-Bank.csv \
+        rca/archive/agent-Market-cloudbed-1.csv \
+        rca/archive/agent-Market-cloudbed-2.csv \
+        rca/archive/agent-Telecom.csv \
+    -q \
+        dataset/Bank/query.csv \
+        dataset/Market/cloudbed-1/query.csv \
+        dataset/Market/cloudbed-2/query.csv \
+        dataset/Telecom/query.csv \
+    -r \
+        agent_claude.csv
+```
+
+### 🚩 Reproduction
+
+To reproduce results in the paper, please first setup your API configurations before running OpenRCA's baselines. Taking OpenAI as an example, you can configure `rca/api_config.yaml` file as follows:
 
 ```yaml
 SOURCE:   "OpenAI"
@@ -67,25 +108,47 @@ MODEL:    "gpt-4o-2024-05-13"
 API_KEY:  "sk-xxxxxxxxxxxxxx"
 ```
 
-### 🚩 Step 3: Start Evaluation
+Then, run the following commands for result reproduction:
 
 ```bash
-python scripts/{SCRIPTS} --dataset {DATASET_NAME}
-# Optional scripts: run_agent_standard.py, run_baseline_balanced.py, run_baseline_oracle.py
+python -m rca.{TESTS} --dataset {DATASET_NAME}
+# Optional tests: run_agent_standard, run_baseline_balanced, run_baseline_oracle
 # Optional datasets: Telecom, Bank, Market/cloudbed-1, Market/cloudbed-2
 ```
 
-For example, if you want to evaluate RCA-Agent on Bank dataset, you should use the following command:
+For example, if you want to evaluate RCA-agent on Bank dataset, you should use the following command:
 
 ```bash
-python scripts/run_agent_standard.py --dataset Bank
+python -m rca.run_agent_standard --dataset Bank
 ```
 
-Note that the telemetry of two Market cloudbed service group are collected separately. For example, if you want to evaluate RCA-Agent on the whole Market dataset, you should use the following command:
+Note that the telemetry of two Market cloudbed service group are collected separately. For example, if you want to evaluate RCA-agent on the whole Market dataset, you should use the following command:
 
 ```bash
-python scripts/run_agent_standard.py --dataset Market/cloudbed-1
-python scripts/run_agent_standard.py --dataset Market/cloudbed-2
+python -m rca.run_agent_standard --dataset Market/cloudbed-1
+python -m rca.run_agent_standard --dataset Market/cloudbed-2
+```
+
+The generated results and monitor files can be found in a new `test` directory created after running any test script.
+
+### 💽 Reconstruction
+
+You can generate new task for OpenRCA telemetry or your own privacy telemetry by modifying `main/task_specification.json` and run the following command:
+
+```bash
+python -m main.generate \
+    -s [your specification config file] \
+    -r [record file to generate query] \
+    -q [query file to save] \
+    -t [timezone of telemetry]
+```
+
+Note that the record schema should be consistent with the `record.csv` of OpenRCA.
+
+You can also re-generate random queries of OpenRCA with the following command:
+
+```bash
+python -m main.generate -d True
 ```
 
 ## 📚 Citation
@@ -112,4 +175,4 @@ Use of Microsoft trademarks or logos in modified versions of this project must n
 Any use of third-party trademarks or logos are subject to those third-party's policies.
 
 ## Disclaimer
-The recommended models in this Repo are just examples, used to explore the potential of agent systems with the paper at [TODO]. Users can replace the models in this Repo according to their needs. When using the recommended models in this Repo, you need to comply with the licenses of these models respectively. Microsoft shall not be held liable for any infringement of third-party rights resulting from your usage of this repo. Users agree to defend, indemnify and hold Microsoft harmless from and against all damages, costs, and attorneys' fees in connection with any claims arising from this Repo. If anyone believes that this Repo infringes on your rights, please notify the project owner email.
+The recommended models in this Repo are just examples, used to explore the potential of agent systems with the paper at ICLR2025. Users can replace the models in this Repo according to their needs. When using the recommended models in this Repo, you need to comply with the licenses of these models respectively. Microsoft shall not be held liable for any infringement of third-party rights resulting from your usage of this repo. Users agree to defend, indemnify and hold Microsoft harmless from and against all damages, costs, and attorneys' fees in connection with any claims arising from this Repo. If anyone believes that this Repo infringes on your rights, please notify the project owner email.

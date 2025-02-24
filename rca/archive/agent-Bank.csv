@@ -1,0 +1,1653 @@
+instruction,prediction,groundtruth,passed,failed,score,row_id,task_index
+"On March 4, 2021, within the time range of 14:30 to 15:00, a single failure was detected in the system. The exact time when the root cause occurred is unknown. Please identify the specific occurrence time of the root cause.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 14:20:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Mysql02
+timestamp: 1614841020.0
+datetime: 2021-03-04 14:57:00
+reason: high memory usage",,2021-03-04 14:57:00,0.0,0.0,task_1
+"On March 4, 2021, between 18:00 and 18:30, there was a single failure observed in the system. The exact component that caused this failure is unknown, and the reason behind the failure is also undetermined. Your task is to identify the root cause component and the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 18:11:00"",
+        ""root cause component"": ""Redis02"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Redis02
+timestamp: 1614852540.0
+datetime: 2021-03-04 18:09:00
+reason: high memory usage","Redis02
+high memory usage",,1.0,1.0,task_6
+"During the specified time range of March 6, 2021, from 06:00 to 06:30, there was a single failure in the system. The component responsible for this failure and the reason behind it remain unknown. Please determine the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1614982800.0
+datetime: 2021-03-06 06:20:00
+reason: high memory usage","Tomcat01
+high memory usage",,1.0,2.0,task_6
+"During the specified time range of March 4, 2021, from 19:00 to 19:30, the system experienced one failure. The exact time of the root cause occurrence is currently unknown. Please pinpoint the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 18:58:00"",
+        ""root cause component"": ""apache02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1614856920.0
+datetime: 2021-03-04 19:22:00
+reason: network latency",,2021-03-04 19:22:00,0.0,3.0,task_1
+"A single failure occurred within the time range of March 6, 2021, from 00:30 to 01:00. The specific component affected by this failure and the reason behind it are currently unknown. You are tasked with identifying the root cause component and the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1614963180.0
+datetime: 2021-03-06 00:53:00
+reason: network latency",,"network latency
+Tomcat04",0.0,4.0,task_6
+"On March 6, 2021, between 14:30 and 15:00, the system experienced a failure. The exact time when the root cause occurred and the specific component responsible for this failure are unknown. Please identify the root cause occurrence datetime and the affected component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-06 14:51:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1615013160.0
+datetime: 2021-03-06 14:46:00
+reason: network latency",,"Tomcat03
+2021-03-06 14:46:00",0.0,5.0,task_5
+"On March 6, 2021, between 18:30 and 19:00, a failure occurred. However, the root cause component, the exact time of the root cause occurrence, and the underlying reason for the failure are currently unknown. You are tasked with identifying the root cause component, the root cause occurrence datetime, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-06 18:30:00"",
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615027920.0
+datetime: 2021-03-06 18:52:00
+reason: network packet loss",,"2021-03-06 18:52:00
+network packet loss
+apache02",0.0,6.0,task_7
+"Within the specified time range of March 6, 2021, from 23:00 to 23:30, there was one reported failure in the system. The specific component responsible for this failure has not yet been identified. Your task is to determine the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""network packet loss""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615043880.0
+datetime: 2021-03-06 23:18:00
+reason: network latency",Tomcat01,,1.0,7.0,task_3
+"During the specified time range of March 6, 2021, from 23:30 to March 7, 2021, at 00:00, there was one failure observed. The exact root cause component, the time at which the root cause occurred, and the underlying reason for this failure remain unknown. You are required to identify the root cause occurrence time, the affected component, and the reason behind the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-06 23:33:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: MG01
+timestamp: 1615044960.0
+datetime: 2021-03-06 23:36:00
+reason: network latency",network latency,"MG01
+2021-03-06 23:36:00",0.3333333333333333,8.0,task_7
+"Within the specified time range of March 7, 2021, from 00:30 to 01:00, the system experienced a failure. The component responsible for this failure and the underlying reasons remain unknown. Please determine the root cause component and the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 00:54:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1615048320.0
+datetime: 2021-03-07 00:32:00
+reason: network packet loss",MG02,network packet loss,0.5,9.0,task_6
+"During the specified time range of March 7, 2021, from 07:30 to 08:00, there was a single failure in the system. The specific component responsible for this failure is currently unknown. Please identify the root cause component involved.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 07:24:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""network packet loss""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1615073520.0
+datetime: 2021-03-07 07:32:00
+reason: network latency",,Tomcat02,0.0,10.0,task_3
+"Within the time range of March 7, 2021, from 16:00 to 16:30, there were two failures detected in the system. However, the exact time of the root cause occurrence for these failures is currently unknown. Please determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 16:07:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-07 16:08:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1615104480.0
+datetime: 2021-03-07 16:08:00
+reason: network latency",2021-03-07 16:08:00,2021-03-07 16:29:00,0.5,11.0,task_1
+"Two system failures were reported within the time range of March 7, 2021, from 16:00 to 16:30. The specific component that caused these failures has not been identified. Please determine the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1615105740.0
+datetime: 2021-03-07 16:29:00
+reason: network packet loss",,"Tomcat04
+MG01",0.0,12.0,task_3
+"Within the time range of March 7, 2021, from 18:30 to 19:00, there was one failure reported in the system. However, the exact time when the root cause occurred and the underlying reason for this failure are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 18:53:00"",
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615114740.0
+datetime: 2021-03-07 18:59:00
+reason: network latency",,"network latency
+2021-03-07 18:59:00",0.0,13.0,task_4
+"During the specified time range of March 7, 2021, from 21:30 to 22:00, there was a single failure reported. The exact reason for this failure is currently unknown. Please investigate and determine the root cause of the failure reason.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""high JVM CPU load""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615124160.0
+datetime: 2021-03-07 21:36:00
+reason: network packet loss",,network packet loss,0.0,14.0,task_2
+"Within the specified time range of March 9, 2021, from 08:00 to 08:30, there was a single failure reported. The exact time of the root cause occurrence and the underlying reason for this failure are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 08:00:00"",
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615248780.0
+datetime: 2021-03-09 08:13:00
+reason: network packet loss",,"2021-03-09 08:13:00
+network packet loss",0.0,15.0,task_4
+"During the specified time range of March 9, 2021, from 09:00 to 09:30, the system experienced a failure. The exact time of the root cause occurrence is unknown, complicating the diagnosis process. Please pinpoint the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 08:44:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615252680.0
+datetime: 2021-03-09 09:18:00
+reason: network packet loss",,2021-03-09 09:18:00,0.0,16.0,task_1
+"During the specified time range of March 9, 2021, from 11:00 to 11:30, there was one documented failure in the system. Currently, the root cause component and the underlying reason for this failure are unknown and need to be identified.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""high JVM CPU load""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615260000.0
+datetime: 2021-03-09 11:20:00
+reason: network latency",,"network latency
+Tomcat01",0.0,17.0,task_6
+"A failure was detected during the time range of March 9, 2021, from 13:00 to 13:30. The specific component that caused this failure and the underlying reason for it are currently unknown. Please identify the root cause component and the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1615266600.0
+datetime: 2021-03-09 13:10:00
+reason: network packet loss",,"MG02
+network packet loss",0.0,18.0,task_6
+"Between March 9, 2021, from 14:00 to 14:30, a single failure was observed in the system. The exact component causing this failure is currently unknown. Please identify the root cause component responsible for this incident.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 14:10:00"",
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1615270440.0
+datetime: 2021-03-09 14:14:00
+reason: network latency",,MG02,0.0,19.0,task_3
+"During the specified time range of March 9, 2021, from 15:00 to 15:30, the system experienced a failure. The exact time of the root cause occurrence and the affected component are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 15:22:00"",
+        ""root cause component"": ""apache02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615274700.0
+datetime: 2021-03-09 15:25:00
+reason: network packet loss",,"Tomcat01
+2021-03-09 15:25:00",0.0,20.0,task_5
+"During the specified time range of March 9, 2021, from 16:30 to 17:00, there was one failure recorded. The exact occurrence time and the component responsible for the root cause of this failure are currently unknown. Please identify the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 16:36:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1615280160.0
+datetime: 2021-03-09 16:56:00
+reason: network latency",,"MG02
+2021-03-09 16:56:00",0.0,21.0,task_5
+"During the specified time range of March 9, 2021, from 19:00 to 19:30, our system experienced a single failure. The exact time of the root cause occurrence remains unknown, which complicates the troubleshooting process. Please determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 19:14:00"",
+        ""root cause component"": ""apache01"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1615288440.0
+datetime: 2021-03-09 19:14:00
+reason: network latency",2021-03-09 19:14:00,,1.0,22.0,task_1
+"Between March 9, 2021, from 20:00 to 20:30, there was a single failure detected in the system. However, the specific component affected, the exact time of the failure's occurrence, and the reasons behind the failure are currently unknown. Your task is to identify the root cause component, the precise occurrence time, and the reason for the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 20:00:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: apache01
+timestamp: 1615292700.0
+datetime: 2021-03-09 20:25:00
+reason: network packet loss",,"2021-03-09 20:25:00
+apache01
+network packet loss",0.0,23.0,task_7
+"During the specified time range of March 9, 2021, from 21:00 to 21:30, a failure occurred in the system. The exact component causing the failure and the underlying reason for this failure are currently unknown. Please identify the root cause component and the root cause reason for this incident.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    }
+}","level: pod
+component: apache01
+timestamp: 1615295220.0
+datetime: 2021-03-09 21:07:00
+reason: network latency",,"network latency
+apache01",0.0,24.0,task_6
+"On March 10, 2021, between 07:00 and 07:30, a single failure was detected. The root cause component responsible for this failure is currently unknown. Please identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615331940.0
+datetime: 2021-03-10 07:19:00
+reason: network latency",,apache02,0.0,25.0,task_3
+"A system experienced a failure within the time range of March 10, 2021, from 10:30 to 11:00. The exact component affected by the failure, the precise occurrence time of the root cause, and the underlying reason for the failure are currently unknown. Please identify the root cause component, the root cause occurrence time, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 10:32:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615344180.0
+datetime: 2021-03-10 10:43:00
+reason: network packet loss",,"Tomcat01
+2021-03-10 10:43:00
+network packet loss",0.0,26.0,task_7
+"On March 10, 2021, between 15:00 and 15:30, two system failures were encountered. The components responsible for these failures and the reasons behind them are not yet known. Please identify the root cause components and the root cause reasons.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 15:00:00"",
+        ""root cause component"": ""apache01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-10 15:02:00"",
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615359720.0
+datetime: 2021-03-10 15:02:00
+reason: network packet loss",,"network latency
+network packet loss
+apache02",0.0,27.0,task_6
+"Within the specified time range of March 10, 2021, from 15:00 to 15:30, there were two failures detected. The exact times of the root causes for these failures and the affected components are currently unknown. You need to identify the root cause occurrence datetime and the root cause component for each failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 15:08:27"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high JVM CPU load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-10 15:18:00"",
+        ""root cause component"": ""Redis01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615360740.0
+datetime: 2021-03-10 15:19:00
+reason: network latency",2021-03-10 15:19:00,"apache02
+2021-03-10 15:02:00",0.25,28.0,task_5
+"During the time range of March 10, 2021, from 16:30 to 17:00, there was one failure reported in the system. The exact time when the root cause occurred and the specific components involved are currently unknown. Please identify the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 16:43:00"",
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615365720.0
+datetime: 2021-03-10 16:42:00
+reason: network latency",2021-03-10 16:42:00,Tomcat01,0.5,29.0,task_5
+"During the specified time range of March 10, 2021, from 18:30 to 19:00, there was a single failure reported in the system. The underlying reason for this failure is currently unknown. Please determine the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1615373820.0
+datetime: 2021-03-10 18:57:00
+reason: network packet loss",,network packet loss,0.0,30.0,task_2
+"Within the specified time range of March 12, 2021, from 10:30 to 11:00, there was a single failure within the system. The exact cause of this failure is currently unknown. Please investigate and determine the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1615517640.0
+datetime: 2021-03-12 10:54:00
+reason: network packet loss",,network packet loss,0.0,31.0,task_2
+"During the specified time range of March 12, 2021, from 12:00 to 12:30, there was a single failure in the system. The specific component that caused this failure is currently unknown. Please identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615522380.0
+datetime: 2021-03-12 12:13:00
+reason: network packet loss",,Tomcat01,0.0,32.0,task_3
+"During the specified time range of March 12, 2021, from 14:00 to 14:30, the system experienced one failure. The exact time of the root cause occurrence, the affected component, and the underlying reason for this failure are currently unknown. You are tasked with identifying the root cause component, the root cause occurrence datetime, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 14:03:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1615528980.0
+datetime: 2021-03-12 14:03:00
+reason: network packet loss","MG02
+2021-03-12 14:03:00",network packet loss,0.6666666666666666,33.0,task_7
+"During the specified time range of March 12, 2021, from 15:30 to 16:00, there was one failure. The exact reason for this failure is currently unknown. You are tasked with identifying the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1615534680.0
+datetime: 2021-03-12 15:38:00
+reason: network packet loss",,network packet loss,0.0,34.0,task_2
+"There were two failures reported within the time range of March 12, 2021, from 16:00 to 16:30. The exact components affected, the occurrence times of the root causes, and the underlying reasons for these failures are currently unknown. Please identify the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 15:54:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-12 15:56:00"",
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615537560.0
+datetime: 2021-03-12 16:26:00
+reason: network packet loss","IG02
+high disk I/O read usage","2021-03-12 16:26:00
+2021-03-12 16:15:00
+network packet loss
+apache02",0.3333333333333333,35.0,task_7
+"There was one failure reported within the time range of March 12, 2021, from 22:30 to 23:00. The exact time of the root cause occurrence and the component responsible for the failure remain unknown. You need to identify the root cause occurrence datetime and the component that triggered the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 22:31:00"",
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""network packet loss""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-12 22:31:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""network packet loss""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1615559700.0
+datetime: 2021-03-12 22:35:00
+reason: network packet loss",,"Tomcat03
+2021-03-12 22:35:00",0.0,36.0,task_5
+"During the specified time range of March 12, 2021, from 23:30 to 00:00, there was a system failure. The exact time of the root cause occurrence is unknown, making it challenging to diagnose the issue effectively. Please determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 23:37:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615563180.0
+datetime: 2021-03-12 23:33:00
+reason: network packet loss",,2021-03-12 23:33:00,0.0,37.0,task_1
+"During the specified time range of March 23, 2021, from 06:30 to 07:00, there was a single failure in the system. The exact time when the root cause occurred and the specific component involved in the failure are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 06:50:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""network packet loss""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616452920.0
+datetime: 2021-03-23 06:42:00
+reason: network packet loss",,"2021-03-23 06:42:00
+MG01",0.0,38.0,task_5
+"During the specified time range of March 23, 2021, from 14:00 to 14:30, there was one identified failure. The component responsible for this failure is currently unknown. Your task is to determine the root cause component that led to this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 14:10:00"",
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1616480640.0
+datetime: 2021-03-23 14:24:00
+reason: network packet loss",,Tomcat04,0.0,39.0,task_3
+"Within the time range of March 23, 2021, from 14:30 to 15:00, a system experienced a single failure. Both the exact time of the root cause occurrence and the underlying reason for this failure are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 14:30:18"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616482200.0
+datetime: 2021-03-23 14:50:00
+reason: network packet loss",,"2021-03-23 14:50:00
+network packet loss",0.0,40.0,task_4
+"There was one failure recorded within the time range of March 23, 2021, from 16:30 to 17:00. The exact time of the root cause occurrence is currently unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 16:14:00""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1616489640.0
+datetime: 2021-03-23 16:54:00
+reason: network latency",,2021-03-23 16:54:00,0.0,41.0,task_1
+"On March 23, 2021, between 17:30 and 18:00, there was one failure observed in the system. The exact time when the root cause of this failure occurred is currently unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 17:35:00"",
+        ""root cause component"": ""Redis02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1616492520.0
+datetime: 2021-03-23 17:42:00
+reason: network latency",,2021-03-23 17:42:00,0.0,42.0,task_1
+"Within the time range of March 23, 2021, from 18:00 to 18:30, there was a single failure reported. The root cause component, the exact time of the root cause occurrence, and the reason behind this failure are currently unknown. Please investigate to determine the root cause component, occurrence time, and the underlying reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 18:00:25"",
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616493780.0
+datetime: 2021-03-23 18:03:00
+reason: network latency",,"network latency
+2021-03-23 18:03:00
+MG01",0.0,43.0,task_7
+"During the specified time range of March 23, 2021, from 21:00 to 21:30, there was one reported failure in the system. However, the details related to the root cause component, the exact time of the root cause occurrence, and the underlying reason for this failure are currently unknown. Please identify the root cause component, the root cause occurrence datetime, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 21:14:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1616504820.0
+datetime: 2021-03-23 21:07:00
+reason: network packet loss",,"Tomcat04
+2021-03-23 21:07:00
+network packet loss",0.0,44.0,task_7
+"During the time range of March 4, 2021, from 01:00 to 01:30, the system experienced a single failure. The specific component responsible for this failure remains unknown. Your task is to identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: MG02
+timestamp: 1614792360.0
+datetime: 2021-03-04 01:26:00
+reason: high JVM CPU load",,MG02,0.0,45.0,task_3
+"During the specified time range of March 4, 2021, from 13:30 to 14:00, there was a single failure. The exact reason for this failure remains unknown. Please identify the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high JVM CPU load""
+    }
+}","level: pod
+component: MG02
+timestamp: 1614836760.0
+datetime: 2021-03-04 13:46:00
+reason: high JVM CPU load",high JVM CPU load,,1.0,46.0,task_2
+"Within the time range of March 4, 2021, from 21:00 to 21:30, there was a single failure in the system. The exact time when the root cause of this failure occurred is currently unknown. Your task is to determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 21:00:00"",
+        ""root cause component"": ""apache01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: IG01
+timestamp: 1614863160.0
+datetime: 2021-03-04 21:06:00
+reason: high JVM CPU load",,2021-03-04 21:06:00,0.0,47.0,task_1
+"During the specified time range of March 4, 2021, from 06:00 to 06:30, the system experienced a failure. The reason for this failure is currently unknown. Please identify the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""apache01"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1614810000.0
+datetime: 2021-03-04 06:20:00
+reason: JVM Out of Memory (OOM) Heap",,JVM Out of Memory (OOM) Heap,0.0,48.0,task_2
+"During the specified time range of March 4, 2021, from 19:30 to 20:00, there were two failures detected. The exact time of occurrence for the root cause and the specific components involved in these failures are currently unknown. Your task is to identify the root cause occurrence datetime and the affected components.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 19:54:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-04 19:55:00"",
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1614857760.0
+datetime: 2021-03-04 19:36:00
+reason: JVM Out of Memory (OOM) Heap",,"MG02
+2021-03-04 19:49:00
+Tomcat03
+2021-03-04 19:36:00",0.0,49.0,task_5
+"Two failures were reported within the time range of March 4, 2021, from 22:00 to 22:30. The exact time of the root cause occurrence is currently unknown, complicating the diagnosis process. Your task is to identify the root cause occurrence datetime to proceed with the investigation.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 21:39:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1614866400.0
+datetime: 2021-03-04 22:00:00
+reason: JVM Out of Memory (OOM) Heap",,"2021-03-04 22:00:00
+2021-03-04 22:25:00",0.0,50.0,task_1
+"During the time range of March 4, 2021, from 22:00 to 22:30, there were two failures detected. The exact time of the root cause occurrence is currently unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 22:10:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-04 22:07:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: IG01
+timestamp: 1614867900.0
+datetime: 2021-03-04 22:25:00
+reason: JVM Out of Memory (OOM) Heap",,"2021-03-04 22:00:00
+2021-03-04 22:25:00",0.0,51.0,task_1
+"During the time range of March 4, 2021, from 19:30 to 20:00, there were two recorded failures in the system. However, the exact component that caused the failures and the reason behind these failures remain unknown. Your task is to identify the root cause component and the root cause reason for these issues.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat03"",
+        ""root cause reason"": ""high disk I/O read usage""
+    },
+    ""2"": {
+        ""root cause component"": ""Tomcat03"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1614858540.0
+datetime: 2021-03-04 19:49:00
+reason: high disk I/O read usage","Tomcat03
+high disk I/O read usage","MG02
+JVM Out of Memory (OOM) Heap",0.5,52.0,task_6
+"During the time range of March 6, 2021, from 04:30 to 05:00, there was a single failure in the system. The exact time when the root cause occurred is currently unknown. Please determine the root cause occurrence datetime to aid in further investigation.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-06 04:30:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high JVM CPU load""
+    }
+}","level: pod
+component: MG01
+timestamp: 1614977760.0
+datetime: 2021-03-06 04:56:00
+reason: high disk I/O read usage",,2021-03-06 04:56:00,0.0,53.0,task_1
+"During the specified time range of March 6, 2021, from 15:00 to 15:30, there was one recorded failure in the system. The exact root cause component, the occurrence time of the root cause, and the reason behind this failure are currently unknown. Please identify the root cause component, determine the root cause occurrence datetime, and establish the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-06 14:54:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615015140.0
+datetime: 2021-03-06 15:19:00
+reason: high disk space usage",,"IG02
+high disk space usage
+2021-03-06 15:19:00",0.0,54.0,task_7
+"During the specified time range of March 7, 2021, from 03:00 to 03:30, there was a single failure in the system. The exact time at which the root cause occurred and the component responsible for the failure are currently unknown. You are tasked with determining the root cause occurrence datetime and identifying the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 03:23:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615058460.0
+datetime: 2021-03-07 03:21:00
+reason: high disk I/O read usage",Tomcat01,2021-03-07 03:21:00,0.5,55.0,task_5
+"Between March 7, 2021, from 15:30 to 16:00, a single failure was detected. The exact occurrence time of the root cause, the affected component, and the underlying reason for the failure are currently unknown. You are tasked with identifying the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 15:30:00"",
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615102860.0
+datetime: 2021-03-07 15:41:00
+reason: high disk I/O read usage",high disk I/O read usage,"2021-03-07 15:41:00
+Tomcat01",0.3333333333333333,56.0,task_7
+"During the specified time range of March 9, 2021, from 01:00 to 01:30, a failure occurred within the system. The exact reason behind this failure is currently unknown. Please determine the root cause reason for this issue.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    }
+}","level: pod
+component: apache01
+timestamp: 1615224000.0
+datetime: 2021-03-09 01:20:00
+reason: high disk I/O read usage",,high disk I/O read usage,0.0,57.0,task_2
+"In the time range of March 9, 2021, from 05:00 to 05:30, a failure was observed. The exact reason for this failure is currently unknown. Please determine the root cause reason for this occurrence.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615237860.0
+datetime: 2021-03-09 05:11:00
+reason: high disk space usage",,high disk space usage,0.0,58.0,task_2
+"During the time range of March 9, 2021, from 15:30 to 16:00, there was a failure in the system. The exact component that caused the failure and the reason behind it are currently unknown. You are tasked with identifying the root cause component and the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 15:26:00"",
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""network latency""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-09 15:26:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615275900.0
+datetime: 2021-03-09 15:45:00
+reason: high disk I/O read usage",,"Tomcat01
+high disk I/O read usage",0.0,59.0,task_6
+"There was a single failure in the specified time range of March 9, 2021, from 17:30 to 18:00. The exact time of the root cause occurrence and the reason for the failure are currently unknown. Please determine the root cause occurrence datetime and the underlying reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 17:29:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: apache01
+timestamp: 1615282740.0
+datetime: 2021-03-09 17:39:00
+reason: high disk space usage",,"high disk space usage
+2021-03-09 17:39:00",0.0,60.0,task_4
+"During the specified time range of March 10, 2021, from 02:30 to 03:00, a failure occurred in the system. The precise time when the root cause occurred and the specific component involved in this failure are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 02:42:30"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615315440.0
+datetime: 2021-03-10 02:44:00
+reason: high disk I/O read usage",Tomcat01,2021-03-10 02:44:00,0.5,61.0,task_5
+"Within the time range of March 10, 2021, from 03:30 to 04:00, there was one failure detected in the system. The root cause for this failure is currently unknown. Please identify the reason for the failure during the specified time period.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 03:53:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""network packet loss""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1615319040.0
+datetime: 2021-03-10 03:44:00
+reason: high disk space usage",,high disk space usage,0.0,62.0,task_2
+"During the specified time range of March 10, 2021, from 14:00 to 14:30, the system experienced a failure. It is unclear which component is responsible for this failure. Your task is to identify the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 14:03:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1615357260.0
+datetime: 2021-03-10 14:21:00
+reason: high disk I/O read usage",,Tomcat02,0.0,63.0,task_3
+"During the specified time range of March 10, 2021, from 15:30 to 16:00, there was one failure reported within the system. The exact time of the root cause occurrence and the affected component are currently unknown. Please identify the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 15:38:00"",
+        ""root cause component"": ""IG02""
+    }
+}","level: pod
+component: apache02
+timestamp: 1615362180.0
+datetime: 2021-03-10 15:43:00
+reason: high disk I/O read usage",,"apache02
+2021-03-10 15:43:00",0.0,64.0,task_5
+"During the specified time range of March 10, 2021, from 22:00 to 22:30, the system experienced two failures. However, the root cause component, the exact time of occurrence, and the underlying reasons for these failures are currently unknown. You are tasked with identifying the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 22:01:00"",
+        ""root cause component"": ""apache02"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-10 22:03:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615384980.0
+datetime: 2021-03-10 22:03:00
+reason: high disk I/O read usage","IG02
+high disk I/O read usage
+2021-03-10 22:03:00","2021-03-10 22:19:00
+MG02",0.5,65.0,task_7
+"During the time range of March 10, 2021, from 22:00 to 22:30, two failures were recorded in the system. The exact time of the root cause occurrence and the specific components affected are currently unknown. Please determine the root cause occurrence datetime and the root cause component involved.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 22:03:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-10 22:01:00"",
+        ""root cause component"": ""apache02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1615385940.0
+datetime: 2021-03-10 22:19:00
+reason: high disk I/O read usage","IG02
+2021-03-10 22:03:00","2021-03-10 22:19:00
+MG02",0.5,66.0,task_5
+"During the specified time range of March 12, 2021, from 16:00 to 16:30, the system experienced two failures. The exact time of the root cause occurrence and the underlying reasons for these failures are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 16:15:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-12 16:00:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615536900.0
+datetime: 2021-03-12 16:15:00
+reason: high disk I/O read usage",high disk I/O read usage,"2021-03-12 16:26:00
+2021-03-12 16:15:00
+network packet loss",0.25,67.0,task_4
+"There was a single failure within the time range of March 4, 2021, from 07:00 to 07:30. The exact reason for this failure remains unknown. Please determine the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""Redis01"",
+        ""root cause reason"": ""high disk space usage""
+    }
+}","level: pod
+component: Redis02
+timestamp: 1614812460.0
+datetime: 2021-03-04 07:01:00
+reason: high CPU usage",,high CPU usage,0.0,68.0,task_2
+"During the specified time range of March 4, 2021, from 20:00 to 20:30, the system experienced one failure. The exact time of the root cause occurrence and the affected component are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 20:00:00"",
+        ""root cause component"": ""Tomcat01""
+    }
+}","level: pod
+component: Redis02
+timestamp: 1614860040.0
+datetime: 2021-03-04 20:14:00
+reason: high CPU usage",,"2021-03-04 20:14:00
+Redis02",0.0,69.0,task_5
+"Within the time range of March 6, 2021, from 02:00 to 02:30, a single failure occurred in the system. The exact component affected by this failure, the time of the root cause occurrence, and the underlying reason for the failure are currently unknown. Please identify the root cause component, the root cause occurrence time, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-06 02:02:00"",
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Mysql01
+timestamp: 1614967200.0
+datetime: 2021-03-06 02:00:00
+reason: high CPU usage","Mysql01
+high CPU usage",2021-03-06 02:00:00,0.6666666666666666,70.0,task_7
+"On March 6, 2021, between 03:30 and 04:00, the system experienced a single failure. Both the root cause component and the reason for this failure are unknown. Your task is to identify the root cause component and determine the reason for the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-06 03:37:00"",
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: IG01
+timestamp: 1614972960.0
+datetime: 2021-03-06 03:36:00
+reason: high CPU usage","IG01
+high CPU usage",,1.0,71.0,task_6
+"On March 6, 2021, between 20:30 and 21:00, a failure was observed in the system. However, the specific component responsible for this failure and the underlying reason remain unknown. You need to determine the root cause component and root cause reason for the observed failure.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1615034640.0
+datetime: 2021-03-06 20:44:00
+reason: high CPU usage","Tomcat04
+high CPU usage",,1.0,72.0,task_6
+"During the specified time range of March 7, 2021, from 01:30 to 02:00, the system experienced a failure. The exact reason for the occurrence of the failure is currently unknown. You are tasked with identifying the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 01:24:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Redis02
+timestamp: 1615053120.0
+datetime: 2021-03-07 01:52:00
+reason: high CPU usage",,high CPU usage,0.0,73.0,task_2
+"On March 7, 2021, within the time range from 06:30 to 07:00, a failure was detected. The exact time when the root cause occurred and the underlying reason for this failure are currently unknown. You need to determine the precise occurrence time and the root cause of the issue.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 06:27:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615070100.0
+datetime: 2021-03-07 06:35:00
+reason: high CPU usage",,"high CPU usage
+2021-03-07 06:35:00",0.0,74.0,task_4
+"Within the time range of March 7, 2021, from 08:00 to 08:30, there was one reported failure in the system. The exact component responsible for this failure and the underlying reason for it are currently unknown. Your task is to identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 08:12:00"",
+        ""root cause component"": ""Tomcat03"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1615075860.0
+datetime: 2021-03-07 08:11:00
+reason: high CPU usage","Tomcat03
+high CPU usage",,1.0,75.0,task_6
+"During the specified time range of March 7, 2021, from 11:00 to 11:30, a failure was detected in the system. The exact component affected by this failure and the underlying reasons are currently unknown. You are tasked with identifying the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 11:09:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615086540.0
+datetime: 2021-03-07 11:09:00
+reason: high CPU usage","IG02
+high CPU usage",,1.0,76.0,task_6
+"During the time range of March 7, 2021, from 13:00 to 13:30, there was a single failure in the system. The specific component that caused this failure is unknown at this time. Please identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: IG01
+timestamp: 1615094640.0
+datetime: 2021-03-07 13:24:00
+reason: high CPU usage",,IG01,0.0,77.0,task_3
+"During the specified time range of March 7, 2021, from 17:30 to 18:00, the system experienced a failure. The exact time of the root cause occurrence and the underlying reason for this failure is currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 17:30:00"",
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615110720.0
+datetime: 2021-03-07 17:52:00
+reason: high CPU usage",high CPU usage,2021-03-07 17:52:00,0.5,78.0,task_4
+"Within the specified time range of March 9, 2021, from 09:30 to 10:00, there was one failure detected. However, the exact time of the root cause occurrence and the specific component responsible for this failure are currently unknown. Your task is to identify the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 09:26:36"",
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1615255020.0
+datetime: 2021-03-09 09:57:00
+reason: high CPU usage",,"Tomcat04
+2021-03-09 09:57:00",0.0,79.0,task_5
+"During the time range of March 9, 2021, from 14:30 to 15:00, there was one failure detected. The specific time and reason for the root cause of this failure are currently unknown. Please identify the root cause occurrence datetime and the underlying reason for the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 14:30:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Redis02
+timestamp: 1615272120.0
+datetime: 2021-03-09 14:42:00
+reason: high CPU usage",high CPU usage,2021-03-09 14:42:00,0.5,80.0,task_4
+"During the specified time range of March 9, 2021, from 18:00 to 18:30, a failure was detected within the system. The exact time of the root cause occurrence is unknown, which complicates the diagnosis process. Please pinpoint the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 18:12:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615284480.0
+datetime: 2021-03-09 18:08:00
+reason: high CPU usage",,2021-03-09 18:08:00,0.0,81.0,task_1
+"On March 9, 2021, between 19:30 and 20:00, a single failure was reported within the system. The specific reason for this failure is currently unknown. Please identify the root cause reason for this occurrence.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat03"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1615290120.0
+datetime: 2021-03-09 19:42:00
+reason: high CPU usage",high CPU usage,,1.0,82.0,task_2
+"Within the specified time range of March 9, 2021, from 22:30 to 23:00, a single failure was detected in the system. The reason for this failure is currently unknown. You are tasked with identifying the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 22:30:00"",
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""network packet loss""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615300320.0
+datetime: 2021-03-09 22:32:00
+reason: high CPU usage",,high CPU usage,0.0,83.0,task_2
+"During the time range of March 10, 2021, from 00:00 to 00:30, there was one failure detected in the system. The exact time at which the root cause occurred remains unknown, adding complexity to the failure diagnosis process. Please identify the exact root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 00:19:00"",
+        ""root cause component"": ""IG01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: IG01
+timestamp: 1615306740.0
+datetime: 2021-03-10 00:19:00
+reason: high CPU usage",2021-03-10 00:19:00,,1.0,84.0,task_1
+"On March 10, 2021, between the time range of 04:30 to 05:00, the system experienced one failure. The specific component responsible for this failure is currently unknown. Your task is to identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1615322280.0
+datetime: 2021-03-10 04:38:00
+reason: high CPU usage",,Tomcat01,0.0,85.0,task_3
+"During the time range of March 10, 2021, from 08:30 to 09:00, there was a reported failure. The exact time of the root cause occurrence during this period is unknown, making it challenging to diagnose the issue. Please determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 08:33:00"",
+        ""root cause component"": ""apache01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: apache01
+timestamp: 1615336200.0
+datetime: 2021-03-10 08:30:00
+reason: high CPU usage",,2021-03-10 08:30:00,0.0,86.0,task_1
+"Between March 12, 2021, from 10:00 to 10:30, the system experienced two failures. The exact times when the root causes occurred and the components impacted by these failures are currently unknown. Please identify the root cause occurrence time and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 09:55:00"",
+        ""root cause component"": ""Redis01"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-12 10:24:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: IG02
+timestamp: 1615515840.0
+datetime: 2021-03-12 10:24:00
+reason: high CPU usage","IG02
+2021-03-12 10:24:00","Mysql01
+2021-03-12 10:12:00",0.5,87.0,task_5
+"During the specified time range of March 12, 2021, from 15:00 to 15:30, the system encountered a failure. The exact time of the root cause occurrence and the component responsible for the failure are currently unknown. Please identify the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 15:11:00"",
+        ""root cause component"": ""MG01""
+    }
+}","level: pod
+component: MG01
+timestamp: 1615533000.0
+datetime: 2021-03-12 15:10:00
+reason: high CPU usage","MG01
+2021-03-12 15:10:00",,1.0,88.0,task_5
+"Within the time range of March 12, 2021, from 17:00 to 17:30, a single failure was observed. The exact reason for this failure is currently unknown. You are tasked with identifying the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Redis02
+timestamp: 1615540440.0
+datetime: 2021-03-12 17:14:00
+reason: high CPU usage",,high CPU usage,0.0,89.0,task_2
+"On March 12, 2021, between 20:30 and 21:00, the system experienced a failure. The exact time of the root cause occurrence and the affected component are currently unknown. You are tasked with identifying both the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 20:46:00"",
+        ""root cause component"": ""Redis01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Redis01
+timestamp: 1615553160.0
+datetime: 2021-03-12 20:46:00
+reason: high CPU usage","Redis01
+2021-03-12 20:46:00",,1.0,90.0,task_5
+"Within the time range of March 7, 2021, from 12:30 to 13:00, the system experienced one failure. The root cause reason for this failure is currently unknown. Please identify the underlying reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 12:30:08"",
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1615091760.0
+datetime: 2021-03-07 12:36:00
+reason: high memory usage",,high memory usage,0.0,91.0,task_2
+"During the specified time range of March 9, 2021, from 23:30 to March 10, 2021, 00:00, there was a single failure in the system. The exact time when the root cause of this failure occurred is currently unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 23:20:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""network packet loss""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1615305180.0
+datetime: 2021-03-09 23:53:00
+reason: high memory usage",,2021-03-09 23:53:00,0.0,92.0,task_1
+"During the specified time range of March 12, 2021, from 10:00 to 10:30, there were two failures reported. The exact time of the root cause occurrence is currently unknown, complicating the diagnosis process. Please determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-12 10:00:00"",
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-12 10:24:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Mysql01
+timestamp: 1615515120.0
+datetime: 2021-03-12 10:12:00
+reason: high memory usage",2021-03-12 10:24:00,2021-03-12 10:12:00,0.5,93.0,task_1
+"During the time range of March 23, 2021, from 02:30 to 03:00, a single failure event was recorded. The exact time when the root cause occurred is currently unknown. Your task is to determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 00:00:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1616438160.0
+datetime: 2021-03-23 02:36:00
+reason: high memory usage",,2021-03-23 02:36:00,0.0,94.0,task_1
+"During the specified time range of March 23, 2021, from 23:00 to 23:30, a system experienced a single failure. The exact time of the root cause occurrence is currently unknown. Please pinpoint the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 23:04:00"",
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: MG02
+timestamp: 1616511840.0
+datetime: 2021-03-23 23:04:00
+reason: network packet loss",2021-03-23 23:04:00,,1.0,95.0,task_1
+"The system experienced a single failure within the time range of March 24, 2021, from 11:00 to 11:30. The root cause component, the exact time of occurrence, and the underlying reason for this failure are currently unknown. Please identify the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-24 10:00:00"",
+        ""root cause component"": ""apache01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1616555280.0
+datetime: 2021-03-24 11:08:00
+reason: network packet loss",,"network packet loss
+Tomcat03
+2021-03-24 11:08:00",0.0,96.0,task_7
+"During the 30-minute time range of March 24, 2021, from 11:30 to 12:00, a failure occurred in the system. The exact component that caused this failure is currently unknown. Please identify the root cause component responsible for this failure.","{
+    ""1"": {
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1616556660.0
+datetime: 2021-03-24 11:31:00
+reason: network packet loss",,Tomcat01,0.0,97.0,task_3
+"During the specified time range of March 24, 2021, from 14:30 to 15:00, there was a single failure noted in the system. The exact reason for the root cause of this failure remains unknown. Your task is to determine the root cause reason.","{
+    ""1"": {
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1616567400.0
+datetime: 2021-03-24 14:30:00
+reason: network latency",,network latency,0.0,98.0,task_2
+"During the specified time range of March 24, 2021, from 15:00 to 15:30, there was a single failure in the system. The root cause component for this failure is currently unknown. Please identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat03"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616569560.0
+datetime: 2021-03-24 15:06:00
+reason: network latency",,MG01,0.0,99.0,task_3
+"During the time range of March 24, 2021, from 19:00 to 19:30, there was one reported failure in the system. The specific component responsible for this failure, as well as the reason behind it, are currently unknown. Please identify the root cause component and the reason for the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-24 19:00:02"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616585040.0
+datetime: 2021-03-24 19:24:00
+reason: network latency",,"MG01
+network latency",0.0,100.0,task_6
+"A single failure occurred within the specified time range of March 24, 2021, from 19:30 to 20:00. The exact time when the root cause occurred and the reason for the failure remain unknown. You are tasked with identifying the root cause occurrence time and the reason behind the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-24 19:52:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1616586600.0
+datetime: 2021-03-24 19:50:00
+reason: network latency",,"2021-03-24 19:50:00
+network latency",0.0,101.0,task_4
+"During the time range of March 24, 2021, from 20:30 to 21:00, the system experienced one failure. The exact reason for this failure is currently unknown and needs to be diagnosed. Please identify the root cause reason for this issue.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat03"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1616589240.0
+datetime: 2021-03-24 20:34:00
+reason: network packet loss",,network packet loss,0.0,102.0,task_2
+"On March 25, 2021, during the time range from 00:00 to 00:30, there were two failures detected in the system. The exact times when the root causes occurred and the components responsible for these failures are currently unknown. You need to determine the root cause occurrence times and identify the root cause components.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 00:00:55"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-25 00:08:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""network packet loss""
+    }
+}","level: pod
+component: MG02
+timestamp: 1616602020.0
+datetime: 2021-03-25 00:07:00
+reason: network latency","MG02
+2021-03-25 00:07:00","apache01
+2021-03-25 00:19:00",0.5,103.0,task_5
+"During the specified time range of March 25, 2021, from 07:30 to 08:00, the system experienced a failure. The root cause reason for this failure is currently unknown. Please identify the root cause reason for the failure within the given time range.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 07:25:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1616629200.0
+datetime: 2021-03-25 07:40:00
+reason: network packet loss",,network packet loss,0.0,104.0,task_2
+"During the time range of March 25, 2021, from 14:30 to 15:00, one failure occurred in the system. The component responsible for this failure and the underlying reason are currently unknown. You are tasked with identifying the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1616655240.0
+datetime: 2021-03-25 14:54:00
+reason: network latency",,"network latency
+Tomcat03",0.0,105.0,task_6
+"During the time range of March 25, 2021, from 17:00 to 17:30, there was one reported failure. The exact time of the root cause occurrence and the reason for the failure are currently unknown, which complicates the diagnosis process. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 15:24:29"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""JVM Out of Memory (OOM) Heap""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1616664120.0
+datetime: 2021-03-25 17:22:00
+reason: network packet loss",,"network packet loss
+2021-03-25 17:22:00",0.0,106.0,task_4
+"During the time range of March 25, 2021, from 18:00 to 18:30, a single failure occurred within the system. The reason behind this failure is currently unknown. Your task is to determine the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 18:02:00"",
+        ""root cause component"": ""Tomcat03"",
+        ""root cause reason"": ""high JVM CPU load""
+    }
+}","level: pod
+component: IG02
+timestamp: 1616667180.0
+datetime: 2021-03-25 18:13:00
+reason: network latency",,network latency,0.0,107.0,task_2
+"Within the time range of March 25, 2021, from 19:00 to 19:30, there were two failures reported. The exact components that caused these failures, their occurrence times, and the underlying reasons are currently unknown. Please identify the root cause component, root cause occurrence time, and root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 19:04:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-25 19:15:00"",
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1616670900.0
+datetime: 2021-03-25 19:15:00
+reason: network packet loss","Tomcat04
+2021-03-25 19:15:00
+IG02
+high CPU usage","network packet loss
+2021-03-25 19:00:00",0.6666666666666666,108.0,task_7
+"During the specified time range of March 25, 2021, from 20:00 to 20:30, a failure occurred within the system. The exact time and the reason for the root cause occurrence are unknown. Please identify the root cause occurrence datetime and the underlying reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 20:02:00"",
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high disk space usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616675100.0
+datetime: 2021-03-25 20:25:00
+reason: network latency",,"2021-03-25 20:25:00
+network latency",0.0,109.0,task_4
+"During the specified time range of March 25, 2021, from 20:30 to 21:00, there was a failure in the system. The component affected by the failure, the exact time of occurrence, and the underlying reason for this failure are currently unknown. You are tasked with identifying the root cause component, the root cause occurrence datetime, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 20:48:00"",
+        ""root cause component"": ""Mysql01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: apache01
+timestamp: 1616676600.0
+datetime: 2021-03-25 20:50:00
+reason: network packet loss",,"2021-03-25 20:50:00
+apache01
+network packet loss",0.0,110.0,task_7
+"During the time range of March 25, 2021, from 22:00 to 22:30, a single failure occurred within the system. The exact time of the root cause occurrence and the reason behind this failure are currently unknown. You are tasked with identifying the root cause occurrence datetime and the underlying reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 22:21:00"",
+        ""root cause component"": ""IG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1616680860.0
+datetime: 2021-03-25 22:01:00
+reason: network packet loss",,"2021-03-25 22:01:00
+network packet loss",0.0,111.0,task_4
+"During the time range of March 7, 2021, from 03:30 to 04:00, a failure occurred. The precise reason for this failure remains unknown. Your task is to determine the root cause of this issue.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-07 03:45:00"",
+        ""root cause component"": ""apache01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1615060740.0
+datetime: 2021-03-07 03:59:00
+reason: JVM Out of Memory (OOM) Heap",,JVM Out of Memory (OOM) Heap,0.0,112.0,task_2
+"During the specified time range of March 9, 2021, from 16:00 to 16:30, the system experienced a single failure. The exact time of the root cause occurrence is currently unknown, which complicates the diagnosis process. Please pinpoint the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-09 16:00:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1615278180.0
+datetime: 2021-03-09 16:23:00
+reason: JVM Out of Memory (OOM) Heap",,2021-03-09 16:23:00,0.0,113.0,task_1
+"During the specified time range of March 10, 2021, from 17:30 to 18:00, there was a single failure observed. The exact time of the root cause occurrence is currently unknown. You are tasked with identifying the precise datetime when the root cause occurred.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-10 17:26:00"",
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1615369860.0
+datetime: 2021-03-10 17:51:00
+reason: JVM Out of Memory (OOM) Heap",,2021-03-10 17:51:00,0.0,114.0,task_1
+"During the specified time range of March 23, 2021, from 01:00 to 01:30, the system experienced one failure. The exact component that caused the failure and the reason behind it are currently unknown. You need to identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 01:01:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616432460.0
+datetime: 2021-03-23 01:01:00
+reason: high disk I/O read usage","MG01
+high disk I/O read usage",,1.0,115.0,task_6
+"During the specified time range of March 23, 2021, from 01:30 to 02:00, there was a single failure observed in the system. The exact time of the root cause occurrence and the underlying reason for this failure are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 01:30:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616435220.0
+datetime: 2021-03-23 01:47:00
+reason: high disk I/O read usage",,"high disk I/O read usage
+2021-03-23 01:47:00",0.0,116.0,task_4
+"Within the specified time range of March 23, 2021, from 15:00 to 15:30, the system experienced a single failure. The specific component responsible for this failure remains unknown. Please identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat02"",
+        ""root cause reason"": ""high JVM CPU load""
+    }
+}","level: pod
+component: Tomcat02
+timestamp: 1616482980.0
+datetime: 2021-03-23 15:03:00
+reason: high disk I/O read usage",Tomcat02,,1.0,117.0,task_3
+"Within the time range of March 24, 2021, from 12:30 to 13:00, a single failure occurred. The exact time of the root cause occurrence and the underlying reason for this failure are currently unknown. Your task is to identify the root cause occurrence datetime and determine the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-24 12:37:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1616560560.0
+datetime: 2021-03-24 12:36:00
+reason: high disk I/O read usage",2021-03-24 12:36:00,high disk I/O read usage,0.5,118.0,task_4
+"Within the specified time range of March 24, 2021, from 14:00 to 14:30, there was one failure reported. The exact time when the root cause occurred and the reason behind this failure are currently unknown. Your task is to identify the root cause occurrence datetime and determine the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-24 13:59:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: apache01
+timestamp: 1616565900.0
+datetime: 2021-03-24 14:05:00
+reason: high disk space usage",,"2021-03-24 14:05:00
+high disk space usage",0.0,119.0,task_4
+"Two failures were detected within the time range of March 25, 2021, from 00:00 to 00:30. The exact time of occurrence and the underlying reasons for these failures are currently unknown. Please determine the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 00:01:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-25 00:21:00"",
+        ""root cause component"": ""apache01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: apache01
+timestamp: 1616602740.0
+datetime: 2021-03-25 00:19:00
+reason: high disk I/O read usage",,"2021-03-25 00:07:00
+high disk I/O read usage
+network latency
+2021-03-25 00:19:00",0.0,120.0,task_4
+"During the specified time range of March 25, 2021, from 02:30 to 03:00, there was one recorded failure within the system. The exact time of the root cause occurrence remains unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 02:30:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG02
+timestamp: 1616611380.0
+datetime: 2021-03-25 02:43:00
+reason: high disk I/O read usage",,2021-03-25 02:43:00,0.0,121.0,task_1
+"On March 25, 2021, between 09:00 and 09:30, there was a single failure observed in the system. Currently, the root cause component and the reason for this failure are unknown. The goal is to identify the root cause component and determine the reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 09:00:00"",
+        ""root cause component"": ""Tomcat03"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1616634240.0
+datetime: 2021-03-25 09:04:00
+reason: high disk I/O read usage",,"Tomcat01
+high disk I/O read usage",0.0,122.0,task_6
+"On March 23, 2021, during the time range of 00:00 to 00:30, there was a recorded failure within the system. The details regarding which specific component failed and the reason behind this failure remain unknown. You are tasked with identifying the root cause component and the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 00:00:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1616428980.0
+datetime: 2021-03-23 00:03:00
+reason: high CPU usage",,"high CPU usage
+Tomcat03",0.0,123.0,task_6
+"On March 23, 2021, between 18:30 and 19:00, the system experienced a single failure. The components affected and the reasons behind this failure are currently unknown. Your task is to identify the root cause component and the underlying reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-23 18:35:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Tomcat03
+timestamp: 1616496180.0
+datetime: 2021-03-23 18:43:00
+reason: high CPU usage",,"high CPU usage
+Tomcat03",0.0,124.0,task_6
+"During the time range of March 24, 2021, from 16:30 to 17:00, one failure occurred in the system. The exact time when the root cause occurred is currently unknown. This missing information makes it challenging to diagnose and address the issue effectively. Please determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-24 16:49:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Tomcat01
+timestamp: 1616575620.0
+datetime: 2021-03-24 16:47:00
+reason: high CPU usage",,2021-03-24 16:47:00,0.0,125.0,task_1
+"During the specified time range of March 25, 2021, from 06:30 to 07:00, a failure was detected in the system. The specific time at which the root cause occurred is currently unknown. Your task is to identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 06:40:00"",
+        ""root cause component"": ""apache02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: apache02
+timestamp: 1616625600.0
+datetime: 2021-03-25 06:40:00
+reason: high CPU usage",2021-03-25 06:40:00,,1.0,126.0,task_1
+"During the specified time range of March 25, 2021, from 09:30 to 10:00, the system experienced one failure. The exact time at which the root cause occurred and the underlying reason for this failure are currently unknown. Your task is to identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 09:38:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: MG01
+timestamp: 1616636280.0
+datetime: 2021-03-25 09:38:00
+reason: high CPU usage","high CPU usage
+2021-03-25 09:38:00",,1.0,127.0,task_4
+"During the time range of March 25, 2021, from 11:30 to 12:00, a failure occurred, but the exact component responsible for the failure and the underlying reason is currently unknown. Your task is to identify the root cause component and the root cause reason for the incident.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""high CPU usage""
+    },
+    ""2"": {
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Mysql02
+timestamp: 1616644380.0
+datetime: 2021-03-25 11:53:00
+reason: high CPU usage",,"high CPU usage
+Mysql02",0.0,128.0,task_6
+"During the specified time range of March 25, 2021, from 15:30 to 16:00, the system experienced one failure. The exact component responsible for this failure is currently unknown. Your task is to identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""Tomcat04"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Mysql02
+timestamp: 1616658120.0
+datetime: 2021-03-25 15:42:00
+reason: high CPU usage",,Mysql02,0.0,129.0,task_3
+"During the specified time range of March 25, 2021, from 19:00 to 19:30, two failures were detected in the system. The exact component responsible for these failures, the precise time of occurrence, and the underlying reasons remain unknown. Your task is to identify the root cause component, the root cause occurrence datetime, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 18:46:00"",
+        ""root cause component"": ""MG01"",
+        ""root cause reason"": ""network packet loss""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2021-03-25 18:47:00"",
+        ""root cause component"": ""MG02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: IG02
+timestamp: 1616670000.0
+datetime: 2021-03-25 19:00:00
+reason: high CPU usage",network packet loss,"Tomcat04
+2021-03-25 19:00:00
+high CPU usage
+IG02
+2021-03-25 19:15:00",0.16666666666666666,130.0,task_7
+"A failure was reported within the time range of March 25, 2021, from 19:30 to 20:00. Currently, the root cause component, the exact time of root cause occurrence, and the underlying reason for the failure are unknown. Please identify the root cause occurrence time, the affected component, and the reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 19:47:00"",
+        ""root cause component"": ""Mysql02"",
+        ""root cause reason"": ""high disk I/O read usage""
+    }
+}","level: pod
+component: Tomcat04
+timestamp: 1616672400.0
+datetime: 2021-03-25 19:40:00
+reason: high CPU usage",,"high CPU usage
+Tomcat04
+2021-03-25 19:40:00",0.0,131.0,task_7
+"On March 25, 2021, between 23:00 and 23:30, a failure occurred. The exact time of the root cause occurrence is currently unknown, making it challenging to diagnose the issue effectively. Please determine the precise root cause occurrence time.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-25 23:18:00"",
+        ""root cause component"": ""Redis02"",
+        ""root cause reason"": ""high CPU usage""
+    }
+}","level: pod
+component: Redis02
+timestamp: 1616685360.0
+datetime: 2021-03-25 23:16:00
+reason: high CPU usage",,2021-03-25 23:16:00,0.0,132.0,task_1
+"During the time range of March 4, 2021, from 00:30 to 01:00, there was one failure reported. The specific reason for this failure is currently unknown. Please identify the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 00:14:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""network latency""
+    }
+}","level: pod
+component: MG01
+timestamp: 1614789240.0
+datetime: 2021-03-04 00:34:00
+reason: high memory usage",,high memory usage,0.0,133.0,task_2
+"On March 4, 2021, between 02:30 and 03:00, a failure was observed. The underlying reason for this failure remains unknown. Your task is to identify the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""Redis01"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Mysql02
+timestamp: 1614797100.0
+datetime: 2021-03-04 02:45:00
+reason: high memory usage",high memory usage,,1.0,134.0,task_2
+"Within the time range of March 4, 2021, from 05:30 to 06:00, a failure was recorded. The exact time when the root cause occurred and the reason behind the failure are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2021-03-04 05:30:00"",
+        ""root cause component"": ""Tomcat01"",
+        ""root cause reason"": ""high memory usage""
+    }
+}","level: pod
+component: Redis02
+timestamp: 1614807060.0
+datetime: 2021-03-04 05:31:00
+reason: high memory usage","high memory usage
+2021-03-04 05:31:00",,1.0,135.0,task_4

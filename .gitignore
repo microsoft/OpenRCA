@@ -1,10 +1,8 @@
-# Telemetry, Observation, Evaluation
-data/*
-!data/.gitkeep
-eval/*
-!eval/.gitkeep
-obs/*
-!obs/.gitkeep
+# OpenRCA
+.temp/
+dataset/
+test/
+api_config.yaml
 
 # Mac
 .DS_Store

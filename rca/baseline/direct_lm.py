@@ -1,5 +1,5 @@
 import tiktoken
-from utils import get_chat_completion
+from rca.api_router import get_chat_completion
 
 system = """You will be provided with some telemetry data and an issue statement explaining a root cause analysis problem to resolve.
 

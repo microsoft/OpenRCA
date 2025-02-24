@@ -2,9 +2,9 @@ import json
 import re
 from IPython.terminal.embed import InteractiveShellEmbed
 
-from agent.Executor import execute_act
+from rca.baseline.rca_agent.executor import execute_act
 
-from utils import get_chat_completion
+from rca.api_router import get_chat_completion
 
 system = """You are the Administrator of a DevOps Assistant system for failure diagnosis. To solve each given issue, you should iteratively instruct an Executor to write and execute Python code for data analysis on telemetry files of target system. By analyzing the execution results, you should approximate the answer step-by-step.
 

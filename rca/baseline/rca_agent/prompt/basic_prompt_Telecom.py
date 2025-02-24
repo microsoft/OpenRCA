@@ -62,13 +62,13 @@ cand = """## POSSIBLE ROOT CAUSE REASONS:
 
 schema = f"""## TELEMETRY DIRECTORY STRUCTURE:
 
-- You can access the telemetry directory in our microservices system: `data/Telecom/telemetry/`
+- You can access the telemetry directory in our microservices system: `dataset/Telecom/telemetry/`
 
-- This directory contains subdirectories organized by a date (e.g., `data/Telecom/telemetry/2020_04_11/`). 
+- This directory contains subdirectories organized by a date (e.g., `dataset/Telecom/telemetry/2020_04_11/`). 
 
-- Within each date-specific directory, you’ll find these subdirectories: `metric` and `trace` (e.g., `data/Telecom/telemetry/2020_04_11/metric/`).
+- Within each date-specific directory, you’ll find these subdirectories: `metric` and `trace` (e.g., `dataset/Telecom/telemetry/2020_04_11/metric/`).
 
-- The telemetry data in those subdirectories is stored in CSV format (e.g., `data/Telecom/telemetry/2020_04_11/metric/metric_container.csv`).
+- The telemetry data in those subdirectories is stored in CSV format (e.g., `dataset/Telecom/telemetry/2020_04_11/metric/metric_container.csv`).
 
 ## DATA SCHEMA
 

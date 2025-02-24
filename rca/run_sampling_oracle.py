@@ -8,18 +8,18 @@ from datetime import datetime
 from loguru import logger
 from copy import deepcopy
 
-from base.DirectLM import DirectLM
-from base.CoTLM import CoTLM
-from bench.GPTEval import evaluate
+from rca.baseline.direct_lm import DirectLM
+from rca.baseline.cot_lm import CoTLM
+from main.evaluate import evaluate
 from time import time
-from utils import configs
+from rca.api_router import configs
 
 def cache_df_dict(dataset_name:str):
 
     df_dict = dict()
     
     if dataset_name == "Telecom":
-        from base.oracle_kpis import kpi_Telecom
+        from rca.baseline.oracle_kpis import kpi_Telecom
         selected_kpi_dict = kpi_Telecom
         
         example_df_dict = {
@@ -28,11 +28,11 @@ def cache_df_dict(dataset_name:str):
         }
         dataset_path = "Telecom"
         
-        import agent.prompt.basic_prompt_Telecom as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Telecom as bp
         cand = bp.cand
         
     elif dataset_name == "Bank":
-        from base.oracle_kpis import kpi_Bank
+        from rca.baseline.oracle_kpis import kpi_Bank
         selected_kpi_dict = kpi_Bank
         
         example_df_dict = {
@@ -42,11 +42,11 @@ def cache_df_dict(dataset_name:str):
         }
         dataset_path = "Bank"
 
-        import agent.prompt.basic_prompt_Bank as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Bank as bp
         cand = bp.cand
         
     elif dataset_name == "Market/cloudbed-1":
-        from base.oracle_kpis import kpi_Market
+        from rca.baseline.oracle_kpis import kpi_Market
         selected_kpi_dict = kpi_Market
         
         example_df_dict = {
@@ -56,11 +56,11 @@ def cache_df_dict(dataset_name:str):
         }
         dataset_path = "Market/cloudbed-1"
 
-        import agent.prompt.basic_prompt_Market as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Market as bp
         cand = bp.cand
         
     elif dataset_name == "Market/cloudbed-2":
-        from base.oracle_kpis import kpi_Market
+        from rca.baseline.oracle_kpis import kpi_Market
         selected_kpi_dict = kpi_Market
         
         example_df_dict = {
@@ -70,21 +70,21 @@ def cache_df_dict(dataset_name:str):
         }
         dataset_path = "Market/cloudbed-2"
 
-        import agent.prompt.basic_prompt_Market as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Market as bp
         cand = bp.cand
         
-    for day_time in os.listdir(f"data/{dataset_path}/telemetry/"):
+    for day_time in os.listdir(f"dataset/{dataset_path}/telemetry/"):
         if day_time == '.DS_Store':
                 continue
         if day_time not in df_dict:
             df_dict[day_time] = deepcopy(example_df_dict)
             
-        for data_type in os.listdir(f"data/{dataset_path}/telemetry/{day_time}"):
+        for data_type in os.listdir(f"dataset/{dataset_path}/telemetry/{day_time}"):
             if data_type == '.DS_Store':
                 continue
-            for fname in os.listdir(f"data/{dataset_path}/telemetry/{day_time}/{data_type}"):
+            for fname in os.listdir(f"dataset/{dataset_path}/telemetry/{day_time}/{data_type}"):
                 t0 = time()
-                cur_df = pd.read_csv(f"data/{dataset_path}/telemetry/{day_time}/{data_type}/{fname}")
+                cur_df = pd.read_csv(f"dataset/{dataset_path}/telemetry/{day_time}/{data_type}/{fname}")
                 t1 = time()
                 logger.debug(f"{round(t1-t0,1)} seconds for reading {fname}")
 
@@ -252,36 +252,38 @@ def extract_period_data(df_list:list, data_type:str, target_timestamp:int, sampl
     return extracted_data
 
 def main(args):
-    import agent.prompt.agent_prompt as ap
+    import rca.baseline.rca_agent.prompt.agent_prompt as ap
     if args.dataset == "Telecom":
-        import agent.prompt.basic_prompt_Telecom as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Telecom as bp
     elif args.dataset == "Bank":
-        import agent.prompt.basic_prompt_Bank as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Bank as bp
     elif args.dataset == "Market/cloudbed-1" or args.dataset == "Market/cloudbed-2":
-        import agent.prompt.basic_prompt_Market as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Market as bp
 
-    inst_file = f"data/{args.dataset}/query.csv"
-    gt_file = f"data/{args.dataset}/record.csv"
-    eval_file = f"eval/{args.dataset}/oracle_{args.tag}_{args.mode}-{configs['MODEL'].split('/')[-1]}.csv"
-    obs_path = f"obs/{args.dataset}/oracle_{args.tag}_{args.mode}-{configs['MODEL'].split('/')[-1]}"
+    inst_file = f"dataset/{args.dataset}/query.csv"
+    gt_file = f"dataset/{args.dataset}/record.csv"
+    eval_file = f"test/result/{args.dataset}/oracle_{args.tag}_{args.mode}-{configs['MODEL'].split('/')[-1]}.csv"
+    obs_path = f"test/monitor/{args.dataset}/oracle_{args.tag}_{args.mode}-{configs['MODEL'].split('/')[-1]}"
     unique_obs_path = f"{obs_path}/{uid}"
 
     instruct_data = pd.read_csv(inst_file)
     gt_data = pd.read_csv(gt_file)
+    if not os.path.exists(inst_file) or not os.path.exists(gt_file):
+        raise FileNotFoundError(f"Please download the dataset first.")
     
     if not os.path.exists(f"{unique_obs_path}/prompt"):
         os.makedirs(f"{unique_obs_path}/prompt")
     if not os.path.exists(eval_file):
-        if not os.path.exists(f"eval/{args.dataset}"):
-            os.makedirs(f"eval/{args.dataset}")
+        if not os.path.exists(f"test/result/{args.dataset}"):
+            os.makedirs(f"test/result/{args.dataset}")
         eval_df = pd.DataFrame(columns=["instruction", "prediction", "groundtruth", "passed", "failed", "score"])
     else:
         eval_df = pd.read_csv(eval_file)
 
     logfile = f"{unique_obs_path}/batch.log"
     logger.remove()
-    logger.add(sys.stdout, colorize=True, enqueue=True, level="DEBUG")
-    logger.add(logfile, colorize=True, enqueue=True, level="DEBUG")
+    logger.add(sys.stdout, colorize=True, enqueue=True, level="INFO")
+    logger.add(logfile, colorize=True, enqueue=True, level="INFO")
     
     scores = {
         "total": 0,

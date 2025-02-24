@@ -1,4 +1,4 @@
-from agent.Controller import control_loop
+from rca.baseline.rca_agent.controller import control_loop
 
 class RCA_Agent:
     def __init__(self, agent_prompt, basic_prompt) -> None:

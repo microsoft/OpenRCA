@@ -1,0 +1,4 @@
+SOURCE:   "OpenAI"
+MODEL:    "gpt-4o-2024-05-13"
+API_KEY:  "sk-xxxxxxxxxxxxxx"
+API_BASE: ""

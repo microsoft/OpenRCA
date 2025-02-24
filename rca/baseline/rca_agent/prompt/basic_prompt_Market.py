@@ -84,13 +84,13 @@ cand = """## POSSIBLE ROOT CAUSE COMPONENTS:
 
 schema = f"""## TELEMETRY DIRECTORY STRUCTURE:
 
-- You can access the telemetry directories of two cloudbed (i.e., `cloudbed-1` and `cloudbed-2`) in our microservices system: `data/Market/cloudbed-1/telemetry/` and `data/Market/cloudbed-2/telemetry/`.
+- You can access the telemetry directories of two cloudbed (i.e., `cloudbed-1` and `cloudbed-2`) in our microservices system: `dataset/Market/cloudbed-1/telemetry/` and `dataset/Market/cloudbed-2/telemetry/`.
 
-- This directory contains subdirectories organized by a date (e.g., `data/Market/cloudbed-1/telemetry/2022_03_20/`). 
+- This directory contains subdirectories organized by a date (e.g., `dataset/Market/cloudbed-1/telemetry/2022_03_20/`). 
 
-- Within each date-specific directory, you’ll find these subdirectories: `metric`, `trace`, and `log` (e.g., `data/Market/cloudbed-1/telemetry/2022_03_20/metric/`).
+- Within each date-specific directory, you’ll find these subdirectories: `metric`, `trace`, and `log` (e.g., `dataset/Market/cloudbed-1/telemetry/2022_03_20/metric/`).
 
-- The telemetry data in those subdirectories is stored in CSV format (e.g., `data/Market/cloudbed-1/telemetry/2022_03_20/metric/metric_container.csv`).
+- The telemetry data in those subdirectories is stored in CSV format (e.g., `dataset/Market/cloudbed-1/telemetry/2022_03_20/metric/metric_container.csv`).
 
 ## DATA SCHEMA
 

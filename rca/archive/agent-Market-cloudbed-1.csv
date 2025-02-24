@@ -1,0 +1,924 @@
+instruction,prediction,groundtruth,passed,failed,score,row_id,task_index
+"The cloud service system, cloudbed-1, experienced one failure within the time range of March 20, 2022, from 09:00 to 09:30. The specific component responsible for this failure and the underlying reason are currently unknown. You are tasked with identifying the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""shippingservice-1"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647738546
+level: pod
+component: shippingservice-1
+reason: container read I/O load
+datetime: 2022-03-20 09:09:06",shippingservice-1,container read I/O load,0.5,0.0,task_6
+"During the time range of March 20, 2022, from 09:30 to 10:00, the cloudbed-1 system experienced a single failure. The exact time of the root cause occurrence is currently unknown, which complicates the failure diagnosis process. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 09:58:00"",
+        ""root cause component"": ""node-3"",
+        ""root cause reason"": ""node disk read I/O consumption""
+    }
+}","timestamp: 1647741299
+level: pod
+component: emailservice-0
+reason: container read I/O load
+datetime: 2022-03-20 09:54:59",,2022-03-20 09:54:59,0.0,1.0,task_1
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 20, 2022, from 10:00 to 10:30. However, the exact time when the root cause of the failure occurred is currently unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 10:02:00"",
+        ""root cause component"": ""cartservice2-0"",
+        ""root cause reason"": ""container read I/O load""
+    }
+}","timestamp: 1647743133
+level: node
+component: node-1
+reason: node memory consumption
+datetime: 2022-03-20 10:25:33",,2022-03-20 10:25:33,0.0,2.0,task_1
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 20, 2022, from 10:30 to 11:00. The specific component that caused the root failure and the underlying reason for the failure are currently unknown. Please identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node memory consumption""
+    }
+}","timestamp: 1647744727
+level: node
+component: node-1
+reason: node memory consumption
+datetime: 2022-03-20 10:52:07",node memory consumption,node-1,0.5,3.0,task_6
+"The cloud service system cloudbed-1 experienced one failure within the time range of March 20, 2022, from 11:00 to 11:30. The specific component responsible for this failure is currently unknown. You are tasked with identifying the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""node-5"",
+        ""root cause reason"": ""node CPU load""
+    }
+}","timestamp: 1647746396
+level: pod
+component: shippingservice-1
+reason: container memory load
+datetime: 2022-03-20 11:19:56",,shippingservice-1,0.0,4.0,task_3
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 20, 2022, from 11:30 to 12:00. The underlying reason for this failure is currently unknown. Please identify the root cause reason for the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 11:35:48"",
+        ""root cause component"": ""recommendationservice"",
+        ""root cause reason"": ""container network packet corruption""
+    }
+}","timestamp: 1647747326
+level: service
+component: recommendationservice
+reason: container network packet corruption
+datetime: 2022-03-20 11:35:26",container network packet corruption,,1.0,5.0,task_2
+"The cloud service system, cloudbed-1, encountered two failures within the time range of March 20, 2022, from 12:00 to 12:30. The exact component responsible for these failures and the underlying reasons are currently unknown. Your task is to identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""node-3"",
+        ""root cause reason"": ""node CPU load""
+    },
+    ""2"": {
+        ""root cause component"": ""frontend"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647749271
+level: node
+component: node-1
+reason: node disk read I/O consumption
+datetime: 2022-03-20 12:07:51",,"container CPU load
+recommendationservice
+node disk read I/O consumption
+node-1",0.0,6.0,task_6
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 20, 2022, from 12:00 to 12:30. The specific components responsible for these failures and the underlying reasons are currently unknown. You are tasked with identifying the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 12:00:00"",
+        ""root cause component"": ""frontend-0"",
+        ""root cause reason"": ""container write I/O load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 12:11:00"",
+        ""root cause component"": ""recommendationservice"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647749457
+level: service
+component: recommendationservice
+reason: container CPU load
+datetime: 2022-03-20 12:10:57",recommendationservice,"node-1
+node disk read I/O consumption
+container CPU load",0.25,7.0,task_6
+"The cloud service system, cloudbed-1, experienced a single failure within the time range of March 20, 2022, from 13:00 to 13:30. The exact time of the root cause occurrence and the affected component are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component in this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 13:00:00"",
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node CPU load""
+    }
+}","timestamp: 1647753199
+level: node
+component: node-2
+reason: node disk write I/O consumption
+datetime: 2022-03-20 13:13:19",,"2022-03-20 13:13:19
+node-2",0.0,8.0,task_5
+"The system cloudbed-1 experienced two failures within the time range of March 20, 2022, from 13:30 to 14:00. The exact time of the root cause occurrence and the underlying reasons for these failures are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 13:30:00"",
+        ""root cause component"": ""checkoutservice-2"",
+        ""root cause reason"": ""container CPU load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 13:30:00"",
+        ""root cause component"": ""productcatalogservice"",
+        ""root cause reason"": ""container network packet retransmission""
+    }
+}","timestamp: 1647754788
+level: node
+component: node-4
+reason: node CPU load
+datetime: 2022-03-20 13:39:48",,"2022-03-20 13:39:48
+node CPU load
+2022-03-20 13:51:51",0.0,9.0,task_4
+"The cloud service system, cloudbed-1, may have experienced two failures within the time range of March 20, 2022, from 13:30 to 14:00. The exact times of these failures' occurrences are currently unknown. Your task is to determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 13:39:00""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 13:52:00""
+    }
+}","timestamp: 1647755511
+level: node
+component: node-6
+reason: node CPU load
+datetime: 2022-03-20 13:51:51","2022-03-20 13:39:48
+2022-03-20 13:51:51",,1.0,10.0,task_1
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 20, 2022, from 14:00 to 14:30. The exact time of the root cause occurrence is currently unknown, which makes diagnosing the issue challenging. Please pinpoint the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 14:24:00""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 14:26:00""
+    }
+}","timestamp: 1647757395
+level: service
+component: shippingservice
+reason: container CPU load
+datetime: 2022-03-20 14:23:15",2022-03-20 14:23:15,2022-03-20 14:14:46,0.5,11.0,task_1
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 20, 2022, from 16:00 to 16:30. The root cause of this failure is currently unknown. Your task is to identify the reason behind this issue.","{
+    ""1"": {
+        ""root cause component"": ""cartservice2-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647763803
+level: pod
+component: shippingservice-1
+reason: container network packet retransmission
+datetime: 2022-03-20 16:10:03",,container network packet retransmission,0.0,12.0,task_2
+"The cloudbed-1 system encountered a failure within the timeframe of March 20, 2022, from 16:30 to 17:00. At this point, the exact occurrence time of the root cause and the specific component involved in the failure are unknown. Your task is to determine the root cause occurrence datetime and the affected component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 16:30:00"",
+        ""root cause component"": ""frontend-0"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647765104
+level: pod
+component: currencyservice-0
+reason: container network packet corruption
+datetime: 2022-03-20 16:31:44",,"currencyservice-0
+2022-03-20 16:31:44",0.0,13.0,task_5
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 20, 2022, from 17:00 to 17:30. The exact time of occurrence and the affected components related to these failures are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 17:23:00"",
+        ""root cause component"": ""paymentservice"",
+        ""root cause reason"": ""container CPU load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 17:00:00"",
+        ""root cause component"": ""adservice-2"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647767561
+level: node
+component: node-4
+reason: node CPU spike
+datetime: 2022-03-20 17:12:41","paymentservice
+2022-03-20 17:23:19","node-4
+2022-03-20 17:12:41",0.5,14.0,task_5
+"Between the time range of March 20, 2022, from 17:30 to 18:00, the system cloudbed-1 experienced a failure. The exact time when the root cause occurred remains unknown, complicating the diagnosis. Please determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 17:18:56"",
+        ""root cause component"": ""cartservice-0"",
+        ""root cause reason"": ""container read I/O load""
+    }
+}","timestamp: 1647769222
+level: node
+component: node-5
+reason: node disk write I/O consumption
+datetime: 2022-03-20 17:40:22",,2022-03-20 17:40:22,0.0,15.0,task_1
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 20, 2022, from 18:00 to 18:30. The exact time of the root cause occurrences and the affected components are currently unknown. Please identify the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 17:54:00"",
+        ""root cause component"": ""adservice-0"",
+        ""root cause reason"": ""container memory load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 17:54:00"",
+        ""root cause component"": ""checkoutservice-1"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647770808
+level: service
+component: paymentservice
+reason: container memory load
+datetime: 2022-03-20 18:06:48",,"paymentservice
+2022-03-20 18:06:48
+2022-03-20 18:24:06
+emailservice",0.0,16.0,task_5
+"During the specified time range of March 20, 2022, from 18:00 to 18:30, the cloud service system, cloudbed-1, experienced two failures. The reasons behind these failures are currently unknown. Your task is to identify the root cause reasons for these incidents.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 18:07:00"",
+        ""root cause component"": ""paymentservice"",
+        ""root cause reason"": ""container CPU load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 18:01:00"",
+        ""root cause component"": ""node-1"",
+        ""root cause reason"": ""node disk write I/O consumption""
+    }
+}","timestamp: 1647771846
+level: service
+component: emailservice
+reason: container network packet corruption
+datetime: 2022-03-20 18:24:06",,"container memory load
+container network packet corruption",0.0,17.0,task_2
+"The cloud service system, cloudbed-1, encountered a failure within the time range of March 20, 2022, from 19:00 to 19:30. The root cause component and the underlying reasons for this failure are currently unknown. Please identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""cartservice2-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647774333
+level: pod
+component: frontend-2
+reason: container network packet retransmission
+datetime: 2022-03-20 19:05:33",,"container network packet retransmission
+frontend-2",0.0,18.0,task_6
+"The cloud service system, cloudbed-1, experienced a single failure within the time range of March 20, 2022, from 19:30 to 20:00. The component responsible for the failure and the underlying reason for this failure are currently unknown. Your task is to identify the root cause component and the reason behind the failure.","{
+    ""1"": {
+        ""root cause component"": ""frontend"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647776146
+level: node
+component: node-4
+reason: node disk read I/O consumption
+datetime: 2022-03-20 19:35:46",,"node-4
+node disk read I/O consumption",0.0,19.0,task_6
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 20, 2022, from 20:00 to 20:30. The specific component that caused the failure and the underlying reason for this incident are currently unknown. Please identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""shippingservice2-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647778982
+level: pod
+component: shippingservice2-0
+reason: container CPU load
+datetime: 2022-03-20 20:23:02",shippingservice2-0,container CPU load,0.5,20.0,task_6
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 20, 2022, from 21:00 to 21:30. The exact time when the root cause occurred is currently unknown, as well as the specific component responsible. Your task is to identify both the root cause occurrence time and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 21:16:53"",
+        ""root cause component"": ""emailservice""
+    }
+}","timestamp: 1647782181
+level: service
+component: emailservice
+reason: container packet loss
+datetime: 2022-03-20 21:16:21","emailservice
+2022-03-20 21:16:21",,1.0,21.0,task_5
+"The cloud service system, cloudbed-1, may have experienced two failures within the time range of March 20, 2022, from 21:30 to 22:00. The exact time of occurrence and the underlying reasons for these failures are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 21:32:00"",
+        ""root cause component"": ""cartservice-0"",
+        ""root cause reason"": ""container CPU load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 21:43:00"",
+        ""root cause component"": ""node-2"",
+        ""root cause reason"": ""node CPU load""
+    }
+}","timestamp: 1647783016
+level: pod
+component: cartservice-0
+reason: container memory load
+datetime: 2022-03-20 21:30:16",,"node disk space consumption
+2022-03-20 21:52:17
+container memory load
+2022-03-20 21:30:16",0.0,22.0,task_4
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 20, 2022, from 21:30 to 22:00. The exact times of the root cause occurrences and the specific components affected by these failures are currently unknown. Please identify the root cause occurrence datetime and the affected components.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 21:22:00"",
+        ""root cause component"": ""node-5"",
+        ""root cause reason"": ""node disk read I/O consumption""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 21:14:00"",
+        ""root cause component"": ""frontend"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647784337
+level: node
+component: node-1
+reason: node disk space consumption
+datetime: 2022-03-20 21:52:17",,"2022-03-20 21:52:17
+cartservice-0
+2022-03-20 21:30:16
+node-1",0.0,23.0,task_5
+"During the time range of March 20, 2022, from 22:30 to 23:00, the cloud service system, cloudbed-1, experienced a failure. The specific component responsible for this failure is currently unknown. Please identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""currencyservice""
+    }
+}","timestamp: 1647788164
+level: node
+component: node-3
+reason: node disk read I/O consumption
+datetime: 2022-03-20 22:56:04",,node-3,0.0,24.0,task_3
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 20, 2022, from 23:00 to 23:30. The exact time of the root cause occurrence, the affected component, and the underlying reason for this failure are currently unknown. Please identify the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 22:45:00"",
+        ""root cause component"": ""productcatalogservice-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647788966
+level: pod
+component: checkoutservice-2
+reason: container memory load
+datetime: 2022-03-20 23:09:26",container memory load,"2022-03-20 23:09:26
+checkoutservice-2",0.3333333333333333,25.0,task_7
+"During the time range of March 20, 2022, from 23:30 to March 21, 2022, 00:00, the cloud service system, cloudbed-1, experienced a failure. The exact component that caused the failure, the precise time of the root cause occurrence, and the underlying reason for this failure are currently unknown. Your task is to identify the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 23:30:00"",
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node disk read I/O consumption""
+    }
+}","timestamp: 1647790210
+level: service
+component: productcatalogservice
+reason: container CPU load
+datetime: 2022-03-20 23:30:10",2022-03-20 23:30:10,"productcatalogservice
+container CPU load",0.3333333333333333,26.0,task_7
+"During the specified time range of March 20, 2022, from 08:30 to 09:00, the cloud service system, cloudbed-1, experienced two failures. The exact time of the root cause occurrence, the affected components, and the underlying reasons for these failures are currently unknown. You are tasked with identifying the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 08:30:00"",
+        ""root cause component"": ""adservice"",
+        ""root cause reason"": ""container network latency""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-20 08:30:00"",
+        ""root cause component"": ""cartservice"",
+        ""root cause reason"": ""container write I/O load""
+    }
+}","timestamp: 1647737329
+level: service
+component: adservice
+reason: container network latency
+datetime: 2022-03-20 08:48:49","adservice
+container network latency
+cartservice","2022-03-20 08:48:49
+2022-03-20 08:39:11",0.5,27.0,task_7
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 20, 2022, from 08:30 to 09:00. The exact underlying reasons for these failures are currently unknown. Please determine the root cause reason for the failures.","{
+    ""1"": {
+        ""root cause component"": ""productcatalogservice2-0"",
+        ""root cause reason"": ""container packet loss""
+    },
+    ""2"": {
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node CPU load""
+    }
+}","timestamp: 1647736751
+level: service
+component: cartservice
+reason: container network latency
+datetime: 2022-03-20 08:39:11",,container network latency,0.0,28.0,task_2
+"The cloud service system, cloudbed-1, encountered one failure within the time range of March 20, 2022, from 22:00 to 22:30. We currently do not know the exact component affected by this failure or the underlying reason for it. You are tasked with identifying both the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node disk read I/O consumption""
+    }
+}","timestamp: 1647784872
+level: pod
+component: frontend-1
+reason: container network latency
+datetime: 2022-03-20 22:01:12",,"frontend-1
+container network latency",0.0,29.0,task_6
+"During the specified time range of March 20, 2022, from 17:00 to 17:30, the cloud service system, cloudbed-1, experienced two failures. The component responsible for these failures is currently unknown. Your task is to identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""paymentservice-0"",
+        ""root cause reason"": ""container memory load""
+    },
+    ""2"": {
+        ""root cause component"": ""adservice-2"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647768199
+level: service
+component: paymentservice
+reason: container process termination
+datetime: 2022-03-20 17:23:19",,"node-4
+paymentservice",0.0,30.0,task_3
+"During the time range of March 20, 2022, from 14:00 to 14:30, the cloud service system, cloudbed-1, experienced two failures. The exact reasons for these failures are currently unknown. Please identify the root cause reason for these failures.","{
+    ""1"": {
+        ""root cause component"": ""cartservice-2"",
+        ""root cause reason"": ""container memory load""
+    },
+    ""2"": {
+        ""root cause component"": ""cartservice-2"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647756886
+level: pod
+component: recommendationservice2-0
+reason: container process termination
+datetime: 2022-03-20 14:14:46",,"container process termination
+container CPU load",0.0,31.0,task_2
+"Cloudbed-1 experienced a single failure within the specified time range of March 20, 2022, from 15:00 to 15:30. The underlying reason for this failure is currently unknown. You are tasked with identifying the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-20 15:00:00"",
+        ""root cause component"": ""cartservice"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647761243
+level: service
+component: shippingservice
+reason: container process termination
+datetime: 2022-03-20 15:27:23",,container process termination,0.0,32.0,task_2
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 00:30 to 01:00. The exact component responsible for the failure, the time of the root cause occurrence, and the underlying reason for this failure are currently unknown. Please identify the root cause component, the root cause occurrence datetime, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 00:30:00"",
+        ""root cause component"": ""currencyservice"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647794245
+level: service
+component: cartservice
+reason: container network packet retransmission
+datetime: 2022-03-21 00:37:25",,"container network packet retransmission
+cartservice
+2022-03-21 00:37:25",0.0,33.0,task_7
+"The cloud service system, cloudbed-1, experienced two failures within the specified time range of March 21, 2022, from 01:00 to 01:30. The exact time of the root cause occurrence is currently unknown. Please investigate to determine the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 00:34:00"",
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node memory consumption""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-21 00:46:00"",
+        ""root cause component"": ""node-1"",
+        ""root cause reason"": ""node CPU spike""
+    }
+}","timestamp: 1647796005
+level: pod
+component: cartservice-0
+reason: container network packet retransmission
+datetime: 2022-03-21 01:06:45",,"2022-03-21 01:06:45
+2022-03-21 01:20:30",0.0,34.0,task_1
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 21, 2022, from 01:00 to 01:30. The exact times at which the root causes of these failures occurred and the reasons for these failures are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 01:01:00"",
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""container network packet retransmission""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-21 01:00:00"",
+        ""root cause component"": ""frontend"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647796830
+level: pod
+component: productcatalogservice-2
+reason: container read I/O load
+datetime: 2022-03-21 01:20:30",container network packet retransmission,"2022-03-21 01:06:45
+container read I/O load
+2022-03-21 01:20:30",0.25,35.0,task_4
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 01:30 to 02:00. The exact time of the root cause occurrence and the affected component are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 01:30:00"",
+        ""root cause component"": ""adservice2-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647798275
+level: node
+component: node-5
+reason: node disk read I/O consumption
+datetime: 2022-03-21 01:44:35",,"node-5
+2022-03-21 01:44:35",0.0,36.0,task_5
+"During the time range of March 21, 2022, from 02:00 to 02:30, the system cloudbed-1 experienced two failures. It is unclear which component within the system is responsible for these failures. Please identify the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""productcatalogservice"",
+        ""root cause reason"": ""container CPU load""
+    },
+    ""2"": {
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node CPU load""
+    }
+}","timestamp: 1647800098
+level: node
+component: node-5
+reason: node disk write I/O consumption
+datetime: 2022-03-21 02:14:58",,"node-5
+recommendationservice",0.0,37.0,task_3
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 03:30 to 04:00. The detailed information about the failure, such as the root cause component, the exact time of occurrence, and the underlying reason, is currently unknown. You are tasked with identifying the root cause component, the root cause occurrence datetime, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 03:30:00"",
+        ""root cause component"": ""productcatalogservice-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647805154
+level: node
+component: node-6
+reason: node disk write I/O consumption
+datetime: 2022-03-21 03:39:14",,"node disk write I/O consumption
+2022-03-21 03:39:14
+node-6",0.0,38.0,task_7
+"The cloud service system, cloudbed-1, experienced one failure within the time range of March 21, 2022, from 04:30 to 05:00. The exact occurrence time and reason for the root cause of this failure are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 04:30:00"",
+        ""root cause component"": ""node-1"",
+        ""root cause reason"": ""node disk read I/O consumption""
+    }
+}","timestamp: 1647808364
+level: service
+component: cartservice
+reason: container network packet retransmission
+datetime: 2022-03-21 04:32:44",,"container network packet retransmission
+2022-03-21 04:32:44",0.0,39.0,task_4
+"On March 21, 2022, between 05:00 and 05:30, the cloudbed-1 system experienced a failure. The exact datetime of the root cause occurrence and the component responsible for this failure are unknown. You are required to identify the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 04:44:00"",
+        ""root cause component"": ""currencyservice-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647810949
+level: node
+component: node-4
+reason: node memory consumption
+datetime: 2022-03-21 05:15:49",,"node-4
+2022-03-21 05:15:49",0.0,40.0,task_5
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 05:30 to 06:00. The exact time of the root cause occurrence is unknown. Please pinpoint the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 04:59:59"",
+        ""root cause component"": ""currencyservice-1"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647812163
+level: pod
+component: shippingservice2-0
+reason: container network packet corruption
+datetime: 2022-03-21 05:36:03",,2022-03-21 05:36:03,0.0,41.0,task_1
+"The cloud service system, cloudbed-1, experienced a failure within the time period of March 21, 2022, from 07:00 to 07:30. The exact time when the root cause occurred as well as the underlying reason for this failure are currently unknown. You need to identify and determine the root cause occurrence time and the reason behind the failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 07:16:00"",
+        ""root cause component"": ""adservice2-0"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647818816
+level: pod
+component: adservice2-0
+reason: container read I/O load
+datetime: 2022-03-21 07:26:56",,"container read I/O load
+2022-03-21 07:26:56",0.0,42.0,task_4
+"The cloudbed-1 system encountered two failures within the time range of March 21, 2022, from 07:30 to 08:00. The exact occurrence time for the root cause of these failures is currently unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 07:14:00""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-21 07:14:00""
+    }
+}","timestamp: 1647819971
+level: node
+component: node-6
+reason: node disk read I/O consumption
+datetime: 2022-03-21 07:46:11",,"2022-03-21 07:55:02
+2022-03-21 07:46:11",0.0,43.0,task_1
+"The cloud service system, cloudbed-1, may have experienced two failures within the time range of March 21, 2022, from 07:30 to 08:00. The exact components involved in the failures, the precise time of occurrence, and the underlying reasons for these failures are currently unknown. You are tasked with identifying the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 07:26:00"",
+        ""root cause component"": ""currencyservice-0"",
+        ""root cause reason"": ""container memory load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-21 07:36:00"",
+        ""root cause component"": ""productcatalogservice"",
+        ""root cause reason"": ""container network packet retransmission""
+    }
+}","timestamp: 1647820502
+level: pod
+component: productcatalogservice-0
+reason: container CPU load
+datetime: 2022-03-21 07:55:02",,"2022-03-21 07:55:02
+container CPU load
+node disk read I/O consumption
+2022-03-21 07:46:11
+productcatalogservice-0
+node-6",0.0,44.0,task_7
+"During the specified time range of March 21, 2022, from 08:00 to 08:30, the cloud service system, cloudbed-1, experienced a failure. The specific component responsible for the failure and the reason behind it are currently unknown. Please identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""shippingservice-0"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647821967
+level: pod
+component: shippingservice-1
+reason: container CPU load
+datetime: 2022-03-21 08:19:27",container CPU load,shippingservice-1,0.5,45.0,task_6
+"The cloud service system, cloudbed-1, experienced one failure within the time range of March 21, 2022, from 08:30 to 09:00. The exact time of the root cause occurrence and the specific component responsible for this failure are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 08:24:00"",
+        ""root cause component"": ""shippingservice-1"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647823965
+level: node
+component: node-1
+reason: node CPU load
+datetime: 2022-03-21 08:52:45",,"2022-03-21 08:52:45
+node-1",0.0,46.0,task_5
+"The cloud service system, cloudbed-1, encountered two failures within the time range of March 21, 2022, from 09:00 to 09:30. The exact time of the root cause occurrence, the component affected, and the underlying reason for these failures are currently unknown. You are tasked with identifying the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 09:16:00"",
+        ""root cause component"": ""node-2"",
+        ""root cause reason"": ""node CPU load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-21 09:09:00"",
+        ""root cause component"": ""productcatalogservice-0"",
+        ""root cause reason"": ""container process termination""
+    }
+}","timestamp: 1647824785
+level: service
+component: productcatalogservice
+reason: container CPU load
+datetime: 2022-03-21 09:06:25",,"container memory load
+2022-03-21 09:06:25
+container CPU load
+2022-03-21 09:26:30
+checkoutservice
+productcatalogservice",0.0,47.0,task_7
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 21, 2022, from 09:00 to 09:30. The specific component responsible for the root cause of these failures is currently unknown. Your task is to determine the root cause component.","{
+    ""1"": {
+        ""root cause component"": ""productcatalogservice-0"",
+        ""root cause reason"": ""container memory load""
+    },
+    ""2"": {
+        ""root cause component"": ""node-1"",
+        ""root cause reason"": ""node CPU load""
+    }
+}","timestamp: 1647825990
+level: service
+component: checkoutservice
+reason: container memory load
+datetime: 2022-03-21 09:26:30",,"checkoutservice
+productcatalogservice",0.0,48.0,task_3
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 09:30 to 10:00. The exact time of the root cause occurrence and the specific component responsible for the failure are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 09:29:14"",
+        ""root cause component"": ""adservice2-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647827637
+level: service
+component: shippingservice
+reason: container read I/O load
+datetime: 2022-03-21 09:53:57",,"shippingservice
+2022-03-21 09:53:57",0.0,49.0,task_5
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 10:00 to 10:30. The precise reason behind this failure is unknown. Please determine the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""adservice2-0"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647828908
+level: node
+component: node-6
+reason: node CPU spike
+datetime: 2022-03-21 10:15:08",,node CPU spike,0.0,50.0,task_2
+"During the time range of March 21, 2022, from 10:30 to 11:00, the cloudbed-1 system experienced two failures. The components affected and the reasons behind these failures are currently unknown. You are required to identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""cartservice-2"",
+        ""root cause reason"": ""container CPU load""
+    },
+    ""2"": {
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node disk read I/O consumption""
+    }
+}","timestamp: 1647830276
+level: node
+component: node-4
+reason: node disk space consumption
+datetime: 2022-03-21 10:37:56",node-6,"node-4
+node memory consumption
+node disk space consumption",0.25,51.0,task_6
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 21, 2022, from 10:30 to 11:00. The exact time of the root cause occurrence is currently unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 10:21:00""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-21 10:54:00""
+    }
+}","timestamp: 1647830692
+level: node
+component: node-6
+reason: node memory consumption
+datetime: 2022-03-21 10:44:52",,"2022-03-21 10:37:56
+2022-03-21 10:44:52",0.0,52.0,task_1
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 11:30 to 12:00. The exact time of the root cause occurrence is currently unknown, complicating the diagnosis process. Please pinpoint the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 11:31:19"",
+        ""root cause component"": ""currencyservice2-0"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647834030
+level: service
+component: frontend
+reason: container memory load
+datetime: 2022-03-21 11:40:30",,2022-03-21 11:40:30,0.0,53.0,task_1
+"On March 21, 2022, between 13:30 and 14:00, the cloud service system, cloudbed-1, experienced a single failure. The specific component responsible for the failure and the underlying reason are currently unknown. Please identify the root cause component and the reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""frontend-2"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647841146
+level: service
+component: currencyservice
+reason: container memory load
+datetime: 2022-03-21 13:39:06",,"container memory load
+currencyservice",0.0,54.0,task_6
+"Within the time range of March 21, 2022, from 14:00 to 14:30, the cloud service system, cloudbed-1, experienced two failures. The root cause reason behind these failures is currently unknown. Please identify the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 14:00:00"",
+        ""root cause component"": ""emailservice-0"",
+        ""root cause reason"": ""container CPU load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-21 13:57:00"",
+        ""root cause component"": ""adservice-1"",
+        ""root cause reason"": ""container memory load""
+    }
+}","timestamp: 1647842901
+level: service
+component: emailservice
+reason: container read I/O load
+datetime: 2022-03-21 14:08:21",,"container read I/O load
+container write I/O load",0.0,55.0,task_2
+"The cloud service system, cloudbed-1, experienced two failures within the time range of March 21, 2022, from 14:00 to 14:30. The exact times of occurrence, the affected components, and the issues' underlying reasons are currently unknown. You are tasked with identifying the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 13:55:00"",
+        ""root cause component"": ""node-1"",
+        ""root cause reason"": ""node CPU load""
+    },
+    ""2"": {
+        ""root cause occurrence datetime"": ""2022-03-21 13:57:00"",
+        ""root cause component"": ""checkoutservice-1"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647843413
+level: service
+component: emailservice
+reason: container write I/O load
+datetime: 2022-03-21 14:16:53",,"emailservice
+container read I/O load
+2022-03-21 14:16:53
+2022-03-21 14:08:21
+container write I/O load",0.0,56.0,task_7
+"The cloud service system, cloudbed-1, experienced one failure within the time range of March 21, 2022, from 14:30 to 15:00. The specific component responsible for this failure is currently unknown. Please identify the root cause component.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 14:36:00"",
+        ""root cause component"": ""paymentservice-0"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647845943
+level: service
+component: adservice
+reason: container read I/O load
+datetime: 2022-03-21 14:59:03",,adservice,0.0,57.0,task_3
+"The cloud service system, cloudbed-1, experienced a single failure within the specified time range of March 21, 2022, from 15:00 to 15:30. The exact time when the root cause occurred is currently unknown. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 15:00:00""
+    }
+}","timestamp: 1647846519
+level: pod
+component: frontend2-0
+reason: container network packet corruption
+datetime: 2022-03-21 15:08:39",,2022-03-21 15:08:39,0.0,58.0,task_1
+"The cloud service system, cloudbed-1, has experienced a failure during the time range of March 21, 2022, from 15:30 to 16:00. The specific component affected by this failure, the exact time of the root cause occurrence, and the reason behind this failure are all currently unknown. You are tasked with identifying the root cause component, the root cause occurrence datetime, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 15:45:00"",
+        ""root cause component"": ""node-1"",
+        ""root cause reason"": ""node CPU load""
+    }
+}","timestamp: 1647848731
+level: service
+component: cartservice
+reason: container packet loss
+datetime: 2022-03-21 15:45:31",2022-03-21 15:45:31,"cartservice
+container packet loss",0.3333333333333333,59.0,task_7
+"The cloud service system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 16:00 to 16:30. While it is confirmed there was one failure, the reason for this failure remains unknown. Your task is to identify the root cause reason for this failure.","{
+    ""1"": {
+        ""root cause component"": ""frontend-2"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647850299
+level: pod
+component: frontend-2
+reason: container read I/O load
+datetime: 2022-03-21 16:11:39",,container read I/O load,0.0,60.0,task_2
+"On March 21, 2022, from 16:30 to 17:00, the cloud service system, cloudbed-1, experienced a failure. However, the exact time of the root cause occurrence, the affected component, and the underlying reason for this failure are currently unknown. Please identify the root cause occurrence datetime, the root cause component, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 16:30:00"",
+        ""root cause component"": ""paymentservice-2"",
+        ""root cause reason"": ""container write I/O load""
+    }
+}","timestamp: 1647852107
+level: node
+component: node-5
+reason: node disk space consumption
+datetime: 2022-03-21 16:41:47",,"node-5
+2022-03-21 16:41:47
+node disk space consumption",0.0,61.0,task_7
+"On March 21, 2022, between 20:00 and 20:30, the cloud service system cloudbed-1 experienced a failure. The exact time of the root cause occurrence is unknown, complicating the diagnosis process. Please identify the root cause occurrence datetime.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 19:56:00""
+    }
+}","timestamp: 1647865567
+level: node
+component: node-3
+reason: node disk space consumption
+datetime: 2022-03-21 20:26:07",,2022-03-21 20:26:07,0.0,62.0,task_1
+"The cloud service system, cloudbed-1, experienced one failure within the time range of March 21, 2022, from 21:30 to 22:00. The specific time of the failure's root cause occurrence and the underlying reason for this failure are currently unknown. Your task is to determine the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 20:48:20"",
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node CPU load""
+    }
+}","timestamp: 1647870740
+level: node
+component: node-2
+reason: node memory consumption
+datetime: 2022-03-21 21:52:20",,"node memory consumption
+2022-03-21 21:52:20",0.0,63.0,task_4
+"During the specified time range of March 21, 2022, from 22:00 to 22:30, the cloud service system cloudbed-1 experienced a failure. The particular component responsible for this failure is currently unknown. Please identify the root cause component of this failure.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 22:18:00"",
+        ""root cause component"": ""paymentservice"",
+        ""root cause reason"": ""container process termination""
+    }
+}","timestamp: 1647871982
+level: node
+component: node-5
+reason: node disk write I/O consumption
+datetime: 2022-03-21 22:13:02",,node-5,0.0,64.0,task_3
+"The cloud service system, cloudbed-1, experienced one failure within the time range of March 21, 2022, from 23:00 to 23:30. The exact time when the root cause occurred and the underlying reason for this failure are currently unknown. You are tasked with identifying the root cause occurrence datetime and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 23:00:00"",
+        ""root cause component"": ""node-6"",
+        ""root cause reason"": ""node disk space consumption""
+    }
+}","timestamp: 1647875729
+level: node
+component: node-4
+reason: node disk space consumption
+datetime: 2022-03-21 23:15:29",node disk space consumption,2022-03-21 23:15:29,0.5,65.0,task_4
+"The cloud service system, cloudbed-1, has experienced one failure within the time range of March 21, 2022, from 23:30 to March 22, 2022, at 00:00. The exact component causing this failure and the reason behind it are currently unknown. Please identify the root cause component and the root cause reason.","{
+    ""1"": {
+        ""root cause component"": ""adservice-0"",
+        ""root cause reason"": ""container process termination""
+    }
+}","timestamp: 1647877392
+level: node
+component: node-4
+reason: node CPU load
+datetime: 2022-03-21 23:43:12",,"node CPU load
+node-4",0.0,66.0,task_6
+"The cloud service system, cloudbed-1, experienced a failure within the specified time range of March 21, 2022, from 03:00 to 03:30. The exact component responsible for the failure, the precise occurrence time, and the underlying reason for this failure are all currently unknown. Your task is to identify the root cause component, the root cause occurrence time, and the root cause reason.","{
+    ""1"": {
+        ""root cause occurrence datetime"": ""2022-03-21 03:00:00"",
+        ""root cause component"": ""adservice"",
+        ""root cause reason"": ""container network latency""
+    }
+}","timestamp: 1647803448
+level: service
+component: checkoutservice
+reason: container network packet corruption
+datetime: 2022-03-21 03:10:48",,"checkoutservice
+container network packet corruption
+2022-03-21 03:10:48",0.0,67.0,task_7
+"The system, cloudbed-1, experienced a failure within the time range of March 21, 2022, from 12:00 to 12:30. There is one known failure, but the specific component responsible for this failure is currently unknown. Identify the root cause component that triggered this failure.","{
+    ""1"": {
+        ""root cause component"": ""productcatalogservice-0"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647836321
+level: service
+component: productcatalogservice
+reason: container network latency
+datetime: 2022-03-21 12:18:41",,productcatalogservice,0.0,68.0,task_3
+"The cloud service system, cloudbed-1, encountered two failures within the specified time range of March 21, 2022, from 02:00 to 02:30. The underlying reasons for these failures are currently unknown. You are tasked with identifying the root cause reason for these failures.","{
+    ""1"": {
+        ""root cause component"": ""node-4"",
+        ""root cause reason"": ""node disk read I/O consumption""
+    },
+    ""2"": {
+        ""root cause component"": ""paymentservice-0"",
+        ""root cause reason"": ""container CPU load""
+    }
+}","timestamp: 1647800799
+level: service
+component: recommendationservice
+reason: container process termination
+datetime: 2022-03-21 02:26:39",,"container process termination
+node disk write I/O consumption",0.0,69.0,task_2

@@ -4,8 +4,8 @@ import json
 import argparse
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, project_root)
-from bench.GPTEval import evaluate
-from utils import configs
+from main.evaluate import evaluate
+from rca.api_router import configs
 
 from datetime import datetime
 from loguru import logger
@@ -18,33 +18,35 @@ def handler(signum, frame):
 
 def main(args, uid, dataset):
 
-    from agent.RCA_Agent import RCA_Agent
-    import agent.prompt.agent_prompt as ap
+    from rca.baseline.rca_agent.rca_agent import RCA_Agent
+    import rca.baseline.rca_agent.prompt.agent_prompt as ap
     if dataset == "Telecom":
-        import agent.prompt.basic_prompt_Telecom as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Telecom as bp
     elif dataset == "Bank":
-        import agent.prompt.basic_prompt_Bank as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Bank as bp
     elif dataset == "Market/cloudbed-1" or dataset == "Market/cloudbed-2":
-        import agent.prompt.basic_prompt_Market as bp
+        import rca.baseline.rca_agent.prompt.basic_prompt_Market as bp
 
-    inst_file = f"data/{dataset}/query.csv"
-    gt_file = f"data/{dataset}/record.csv"
-    eval_file = f"eval/{dataset}/agent-{args.tag}-{configs['MODEL'].split('/')[-1]}.csv"
-    obs_path = f"obs/{dataset}/agent-{args.tag}-{configs['MODEL'].split('/')[-1]}"
+    inst_file = f"dataset/{dataset}/query.csv"
+    gt_file = f"dataset/{dataset}/record.csv"
+    eval_file = f"test/result/{dataset}/agent-{args.tag}-{configs['MODEL'].split('/')[-1]}.csv"
+    obs_path = f"test/monitor/{dataset}/agent-{args.tag}-{configs['MODEL'].split('/')[-1]}"
     unique_obs_path = f"{obs_path}/{uid}"
 
     instruct_data = pd.read_csv(inst_file)
     gt_data = pd.read_csv(gt_file)
+    if not os.path.exists(inst_file) or not os.path.exists(gt_file):
+        raise FileNotFoundError(f"Please download the dataset first.")
 
-    if not os.path.exists(f"{unique_obs_path}/history_cache"):
-        os.makedirs(f"{unique_obs_path}/history_cache")
+    if not os.path.exists(f"{unique_obs_path}/history"):
+        os.makedirs(f"{unique_obs_path}/history")
     if not os.path.exists(f"{unique_obs_path}/trajectory"):
         os.makedirs(f"{unique_obs_path}/trajectory")
     if not os.path.exists(f"{unique_obs_path}/prompt"):
         os.makedirs(f"{unique_obs_path}/prompt")
     if not os.path.exists(eval_file):
-        if not os.path.exists(f"eval/{dataset}"):
-            os.makedirs(f"eval/{dataset}")
+        if not os.path.exists(f"test/result/{dataset}"):
+            os.makedirs(f"test/result/{dataset}")
         eval_df = pd.DataFrame(columns=["instruction", "prediction", "groundtruth", "passed", "failed", "score"])
     else:
         eval_df = pd.read_csv(eval_file)
@@ -91,10 +93,10 @@ def main(args, uid, dataset):
             nb = nbf.new_notebook()
             nbfile = f"{unique_obs_path}/trajectory/{uuid}.ipynb"
             promptfile = f"{unique_obs_path}/prompt/{uuid}.json"
-            logfile = f"{unique_obs_path}/history_cache/{uuid}.log"
+            logfile = f"{unique_obs_path}/history/{uuid}.log"
             logger.remove()
-            logger.add(sys.stdout, colorize=True, enqueue=True, level="DEBUG")
-            logger.add(logfile, colorize=True, enqueue=True, level="DEBUG")
+            logger.add(sys.stdout, colorize=True, enqueue=True, level="INFO")
+            logger.add(logfile, colorize=True, enqueue=True, level="INFO")
             logger.debug('\n' + "#"*80 + f"\n{uuid}: {task_index}\n" + "#"*80)
             try: 
                 signal.alarm(args.timeout)

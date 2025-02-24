@@ -2,7 +2,7 @@ import os
 import yaml
 import time
 
-def load_config(config_path="./api_config.yaml"):
+def load_config(config_path="rca/api_config.yaml"):
     configs = dict(os.environ)
     with open(config_path, "r") as file:
         yaml_data = yaml.safe_load(file)
@@ -70,9 +70,13 @@ def get_chat_completion(messages, temperature=0.0):
         if configs["SOURCE"] == "AI":
             return AI_chat_completion(messages, temperature)
         elif configs["SOURCE"] == "OpenAI":
-            return AI_chat_completion(messages, temperature)
+            return OpenAI_chat_completion(messages, temperature)
         elif configs["SOURCE"] == "Google":
             return Google_chat_completion(messages, temperature)
+        elif configs["SOURCE"] == "Anthropic":
+            return Anthropic_chat_completion(messages, temperature)
+        else:
+            raise ValueError("Invalid SOURCE in api_config file.")
     
     for i in range(3):
         try:

@@ -8,7 +8,7 @@
             "root cause occurrence time: {datetime}"
         ],
         "scoring_points": [
-            "The {idx} root cause occurrence time is within 1 minutes (i.e., <=1min) of {datetime} (1 point)"
+            "The {idx} root cause occurrence time is within 1 minutes (i.e., <=1min) of {datetime}"
         ]
     },
     "task_2": {
@@ -20,7 +20,7 @@
             "root cause reason: {reason}"
         ],
         "scoring_points": [
-            "The {idx} predicted root cause reason is {reason}.(1 point)"
+            "The {idx} predicted root cause reason is {reason}"
         ]
     },
     "task_3": {
@@ -32,7 +32,7 @@
             "root cause component: {component}"
         ],
         "scoring_points": [
-            "The {idx} predicted root cause component is {component}. (1 point)"
+            "The {idx} predicted root cause component is {component}"
         ]
     },
     "task_4": {
@@ -45,8 +45,8 @@
             "root cause reason: {reason}"
         ],
         "scoring_points": [
-            "The {idx} root cause occurrence time is within 1 minutes (i.e., <=1min) of {datetime} (1 point)",
-            "The {idx} predicted root cause reason is {reason}. (1 point)"
+            "The {idx} root cause occurrence time is within 1 minutes (i.e., <=1min) of {datetime}",
+            "The {idx} predicted root cause reason is {reason}"
         ]
     },
     "task_5": {
@@ -59,8 +59,8 @@
             "root cause component: {component}"
         ],
         "scoring_points": [
-            "The {idx} root cause occurrence time is within 1 minutes (i.e., <=1min) of {datetime} (1 point)",
-            "The {idx} predicted root cause component is {component}. (1 point)"
+            "The {idx} root cause occurrence time is within 1 minutes (i.e., <=1min) of {datetime}",
+            "The {idx} predicted root cause component is {component}"
         ]
     },
     "task_6": {
@@ -73,8 +73,8 @@
             "root cause reason: {reason}"
         ],
         "scoring_points": [
-            "The {idx} predicted root cause component is {component}. (1 point)",
-            "The {idx} predicted root cause reason is {reason}.(1 point)"
+            "The {idx} predicted root cause component is {component}",
+            "The {idx} predicted root cause reason is {reason}"
         ]
     },
     "task_7": {
@@ -88,18 +88,9 @@
             "root cause reason: {reason}"
         ],
         "scoring_points": [
-            "The {idx} root cause occurrence time is within 1 minutes (i.e., <=1min) of {datetime} (1 point)",
-            "The {idx} predicted root cause component is {component}. (1 point)",
-            "The {idx} predicted root cause reason is {reason}.(1 point)"
+            "The {idx} root cause occurrence time is within 1 minutes (i.e., <=1min) of {datetime}",
+            "The {idx} predicted root cause component is {component}",
+            "The {idx} predicted root cause reason is {reason}"
         ]
       }
 }    
-
-    
-    
-    
-    
-    
-    
-        
-    

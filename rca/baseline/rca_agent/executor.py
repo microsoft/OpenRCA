@@ -1,7 +1,7 @@
 import re
 import time
 from datetime import datetime
-from utils import get_chat_completion
+from rca.api_router import get_chat_completion
 import tiktoken
 import traceback
 
