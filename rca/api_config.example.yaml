@@ -1,0 +1,4 @@
+SOURCE:   "Anthropic"
+MODEL:    "claude-sonnet-4-5-20250929"
+API_KEY:  "sk-ant-xxxxxxxxxxxxx"
+API_BASE: ""
