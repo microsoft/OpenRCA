@@ -81,12 +81,23 @@ def control_loop(objective:str, plan:str, ap, bp, logger, max_step = 15, max_tur
         
         note = [{'role': 'user', 'content': f"Continue your reasoning process for the target issue:\n\n{objective}\n\nFollow the rules during issue solving:\n\n{ap.rules}.\n\nResponse format:\n\n{format}"}]
         attempt_actor = []
+        response_raw = ""
         try:
             response_raw = get_chat_completion(
                 messages=prompt + note,
             )
+            if response_raw is None:
+                logger.error("API returned None response")
+                prompt.append({'role': 'user', 'content': "The API request failed. Please provide your analysis in requested JSON format."})
+                continue
             if "```json" in response_raw:
-                response_raw = re.search(r"```json\n(.*)\n```", response_raw, re.S).group(1).strip()
+                m = re.search(r"```json\s*\n(.*?)\n\s*```", response_raw, re.S)
+                if m:
+                    response_raw = m.group(1).strip()
+                else:
+                    m2 = re.search(r"```json\s*(.*?)```", response_raw, re.S)
+                    if m2:
+                        response_raw = m2.group(1).strip()
             logger.debug(f"Raw Response:\n{response_raw}")
             if '"analysis":' not in response_raw or '"instruction":' not in response_raw or '"completed":' not in response_raw:
                 logger.warning("Invalid response format. Please provide a valid JSON response.")
@@ -107,10 +118,18 @@ def control_loop(objective:str, plan:str, ap, bp, logger, max_step = 15, max_tur
                 answer = get_chat_completion(
                     messages=prompt,
                 )
+                if answer is None:
+                    answer = "API request failed. No root cause found."
                 logger.debug(f"Raw Final Answer:\n{answer}")
                 prompt.append({'role': 'assistant', 'content': answer})
                 if "```json" in answer:
-                    answer = re.search(r"```json\n(.*)\n```", answer, re.S).group(1).strip()
+                    m = re.search(r"```json\s*\n(.*?)\n\s*```", answer, re.S)
+                    if m:
+                        answer = m.group(1).strip()
+                    else:
+                        m2 = re.search(r"```json\s*(.*?)```", answer, re.S)
+                        if m2:
+                            answer = m2.group(1).strip()
                 return answer, trajectory, prompt
 
             code, result, status, new_history = execute_act(instruction, bp.schema, history, attempt_actor, kernel, logger)
@@ -144,8 +163,17 @@ def control_loop(objective:str, plan:str, ap, bp, logger, max_step = 15, max_tur
     answer = get_chat_completion(
         messages=prompt,
     )
+    if answer is None:
+        answer = "API request failed. No root cause found."
     logger.debug(f"Raw Final Answer:\n{answer}")
     prompt.append({'role': 'assistant', 'content': answer})
     if "```json" in answer:
-        answer = re.search(r"```json\n(.*)\n```", answer, re.S).group(1).strip()
+        m = re.search(r"```json\s*\n(.*?)\n\s*```", answer, re.S)
+        if m:
+            answer = m.group(1).strip()
+        else:
+            # Fallback: try to extract JSON object directly after ```json
+            m2 = re.search(r"```json\s*(.*?)```", answer, re.S)
+            if m2:
+                answer = m2.group(1).strip()
     return answer, trajectory, prompt

@@ -1,0 +1,32 @@
+# API Profiles — copy a profile's fields into api_config.yaml or use CLI overrides
+# Usage: python -m rca.run_agent_standard --dataset Bank --source OpenAI --model gpt-4o --api_key sk-...
+
+anthropic-sonnet:
+  SOURCE:   "Anthropic"
+  MODEL:    "claude-sonnet-4-5-20250929"
+  API_KEY:  "sk-ant-xxxxxxxxxxxxx"
+
+anthropic-opus-4.5:
+  SOURCE:   "Anthropic"
+  MODEL:    "claude-opus-4-5-20251101"
+  API_KEY:  "sk-ant-xxxxxxxxxxxxx"
+
+anthropic-opus-4.6:
+  SOURCE:   "Anthropic"
+  MODEL:    "claude-opus-4-6-20260110"
+  API_KEY:  "sk-ant-xxxxxxxxxxxxx"
+
+openai-gpt5.2:
+  SOURCE:   "OpenAI"
+  MODEL:    "gpt-5.2-2025-12-11"
+  API_KEY:  "sk-proj-xxxxxxxxxxxxx"
+
+openai-o3:
+  SOURCE:   "OpenAI"
+  MODEL:    "o3"
+  API_KEY:  "sk-proj-xxxxxxxxxxxxx"
+
+google-gemini:
+  SOURCE:   "Google"
+  MODEL:    "gemini-3-pro-preview"
+  API_KEY:  "AIza-xxxxxxxxxxxxx"
