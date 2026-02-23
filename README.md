@@ -151,6 +151,30 @@ You can also re-generate random queries of OpenRCA with the following command:
 python -m main.generate -d True
 ```
 
+## ❓ FAQ
+
+**Q: Why can't I find any fault based on `records.csv` or `query.csv` / why does the fault appear at a different time or on a different component?**
+
+A: All faults are recorded in the **UTC+8** timezone. If you convert timestamps using your local time (and your local timezone is not UTC+8), this may cause a time offset, leading to mismatched results.
+
+**Q: Why am I often unable to find network-related faults?**
+
+A: Network-related faults usually cannot be identified using KPIs alone. Consider examining the latency relationship between parent spans and child spans in traces.
+
+**Q: Why can't my agent read telemetry data at the ground-truth timestamp recorded in `records.csv`?**
+
+A: All telemetry data has a fixed sampling frequency. There may not be a sampled data point at the exact corresponding timestamp.
+
+**Q: Can I submit evaluation results using my own custom agent?**
+
+A: Yes. You need to indicate whether your agent is open-source. If it is not open-source, you must provide the descriptions of your tools/MCPs/skills for review, to ensure that no ground-truth information from `records.csv` is being read from local directories or websites.
+
+**Q: What is the deployment relationship between Node, Pod, Container, and Service?**
+
+A:
+- For **Bank**: You can find it [here](https://docs.google.com/spreadsheets/d/14j_z6K5vqwY9sQvkPsygksbL7Dm4bpiR/edit?usp=sharing&ouid=114089563960398803334&rtpof=true&sd=true).
+- For **Market**: You can find it in `metric_container.csv`. For example, `node-5.adservice-2` means it is the 2nd pod of `adservice` deployed on `node-5`; `node-6.adservice-1` means the 1st pod deployed on `node-6`. Multiple pods together form a service (with fault tolerance).
+
 ## 📚 Citation
 
 If you use OpenRCA in your research, please cite our paper:
