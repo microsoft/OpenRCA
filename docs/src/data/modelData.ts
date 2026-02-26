@@ -38,7 +38,6 @@ export const modelData: Data[] = [
   { name: 'RCA-Agent', model: 'Claude 3.5 Sonnet', org: 'Microsoft', correct: '11.34%', partial: '17.31%', date: '2025/1/23' },
   { name: 'RCA-Agent', model: 'GPT-4o', org: 'Microsoft', correct: '8.96%', partial: '17.91%', date: '2025/1/23' },
   { name: 'RCA-Agent', model: 'Gemini 1.5 Pro', org: 'Microsoft', correct: '2.69%', partial: '6.87%', date: '2025/1/23' },
-  
   // Closed Models - Balanced
   { name: 'Prompting (Balanced)', model: 'Claude 3.5 Sonnet', org: 'Microsoft', correct: '3.88%', partial: '18.81%', date: '2025/1/23' },
   { name: 'Prompting (Balanced)', model: 'GPT-4o', org: 'Microsoft', correct: '3.28%', partial: '14.33%', date: '2025/1/23' },
