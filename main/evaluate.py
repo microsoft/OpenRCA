@@ -113,6 +113,11 @@ def file_evaluate(prediction_file:str, query_file:str, report_file:str):
 
     pred_df = pd.read_csv(prediction_file)
     query_df = pd.read_csv(query_file)
+    
+    # If prediction file has 'row_id' column, sort by it to align with query file order
+    if 'row_id' in pred_df.columns:
+        pred_df = pred_df.sort_values('row_id').reset_index(drop=True)
+    
     eval_df = pd.DataFrame(columns=["query", "answer", "groundtruth", "passed", "failed", "score", "task_index"])
 
     if len(pred_df) != len(query_df):
@@ -162,17 +167,37 @@ def report(report_file):
         "middle": 0,
         "hard": 0,
     }
+    
+    partial_scores = {
+        "easy": 0,
+        "middle": 0,
+        "hard": 0,
+    }
 
     df = pd.read_csv(report_file)
     # By default, task_1-3 is easy, task_4-6 is middle, task_7 is hard. For DIY task specifications, you should change this line to modify the difficulty:
     df["difficulty"] = df["task_index"].apply(lambda x: "easy" if int(x.split('_')[1]) <= 3 else "middle" if int(x.split('_')[1]) <= 6 else "hard")
+    
+    # Calculate strict scores (score == 1.0)
     scores['easy'] += len(df[(df["score"]==1.0) & (df["difficulty"]=="easy")])
     scores['middle'] += len(df[(df["score"]==1.0) & (df["difficulty"]=="middle")])
     scores['hard'] += len(df[(df["score"]==1.0) & (df["difficulty"]=="hard")])
+    
+    # # Calculate partial scores (count of samples with 0 < score < 1.0, i.e., partially correct)
+    # partial_scores['easy'] += len(df[(df["score"]>0) & (df["score"]<1.0) & (df["difficulty"]=="easy")])
+    # partial_scores['middle'] += len(df[(df["score"]>0) & (df["score"]<1.0) & (df["difficulty"]=="middle")])
+    # partial_scores['hard'] += len(df[(df["score"]>0) & (df["score"]<1.0) & (df["difficulty"]=="hard")])
+
+    # Calculate partial scores (sum of scores)
+    partial_scores['easy'] += df[df["difficulty"]=="easy"]["score"].sum()
+    partial_scores['middle'] += df[df["difficulty"]=="middle"]["score"].sum()
+    partial_scores['hard'] += df[df["difficulty"]=="hard"]["score"].sum()
+
     nums['easy'] += len(df[df["difficulty"]=="easy"])
     nums['middle'] += len(df[df["difficulty"]=="middle"])
     nums['hard'] += len(df[df["difficulty"]=="hard"])
 
+    print("Strict Accuracy (Score == 1.0):")
     print(f"{'-'*12:<12}{'-'*12:<12}{'-'*12:<12}{'-'*12}")
     print(f"{'Class':<12}{'Total(#)':<12}{'Correct(#)':<12}{'Accuracy(%)':<12}")
     print(f"{'-'*12:<12}{'-'*12:<12}{'-'*12:<12}{'-'*12}")
@@ -182,6 +207,18 @@ def report(report_file):
     print(f"{'-'*12:<12}{'-'*12:<12}{'-'*12:<12}{'-'*12}")
     total_accuracy = sum(scores.values()) / sum(nums.values()) if sum(nums.values()) > 0 else 0
     print(f"{'Total':<12}{sum(nums.values()):<12}{sum(scores.values()):<12}{total_accuracy:.2%}")
+    print(f"{'-'*12:<12}{'-'*12:<12}{'-'*12:<12}{'-'*12}")
+    
+    print("\nPartial Accuracy (Score > 0.0 included):")
+    print(f"{'-'*12:<12}{'-'*12:<12}{'-'*12:<12}{'-'*12}")
+    print(f"{'Class':<12}{'Total(#)':<12}{'Correct(#)':<12}{'Accuracy(%)':<12}")
+    print(f"{'-'*12:<12}{'-'*12:<12}{'-'*12:<12}{'-'*12}")
+    for key in partial_scores.keys():
+        accuracy = partial_scores[key] / nums[key] if nums[key] > 0 else 0
+        print(f"{key:<12}{nums[key]:<12}{partial_scores[key]:<12}{accuracy:.2%}")
+    print(f"{'-'*12:<12}{'-'*12:<12}{'-'*12:<12}{'-'*12}")
+    total_accuracy = sum(partial_scores.values()) / sum(nums.values()) if sum(nums.values()) > 0 else 0
+    print(f"{'Total':<12}{sum(nums.values()):<12}{sum(partial_scores.values()):<12}{total_accuracy:.2%}")
     print(f"{'-'*12:<12}{'-'*12:<12}{'-'*12:<12}{'-'*12}")
     
 

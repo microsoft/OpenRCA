@@ -3,6 +3,7 @@
 dataset/
 test/
 api_config.yaml
+config.json
 
 # Mac
 .DS_Store

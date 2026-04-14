@@ -172,7 +172,8 @@ A: Yes. You need to indicate whether your agent is open-source. If it is not ope
 **Q: What is the deployment relationship between Node, Pod, Container, and Service?**
 
 A:
-- For **Bank**: You can find it [here](https://docs.google.com/spreadsheets/d/14j_z6K5vqwY9sQvkPsygksbL7Dm4bpiR/edit?usp=sharing&ouid=114089563960398803334&rtpof=true&sd=true).
+- For **Telecom**: You can find it [here](https://docs.google.com/spreadsheets/d/14j_z6K5vqwY9sQvkPsygksbL7Dm4bpiR/edit?usp=sharing&ouid=114089563960398803334&rtpof=true&sd=true).
+- For **Bank**: All components are at pod level, so only horizontal pod-level traces are available without a vertical deployment structure.
 - For **Market**: You can find it in `metric_container.csv`. For example, `node-5.adservice-2` means it is the 2nd pod of `adservice` deployed on `node-5`; `node-6.adservice-1` means the 1st pod deployed on `node-6`. Multiple pods together form a service (with fault tolerance).
 
 ## 📚 Citation
