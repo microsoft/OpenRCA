@@ -110,6 +110,54 @@ API_KEY:  "sk-xxxxxxxxxxxxxx"
 
 Then, run the following commands for result reproduction:
 
+RCA-agent requires a running local Docker Engine (Linux containers, Docker
+Engine and CLI 25 or newer). Build its execution image once before running the agent:
+
+```bash
+docker build -t openrca-executor:local rca/baseline/rca_agent/sandbox
+```
+
+Generated Python runs in a fresh container for each diagnosis, with variables
+preserved between steps. The container has no external network, runs as an
+unprivileged user with all capabilities dropped and no new privileges, and has
+a read-only root filesystem. Only the known `dataset/*/telemetry` directories
+are mounted, read-only and without recursive submounts; `query.csv`, `record.csv`,
+the source tree, API configuration, home directory and Docker socket are not
+exposed. The only general scratch space is a 64 MiB temporary filesystem.
+Cells have a 60-second deadline; each container is limited to 2 CPUs, 8 GiB
+memory without additional swap, and 64 processes. Code and response sizes are
+bounded. Runtime limits are configured by trusted application code, not model
+output. The container is removed on completion, failure or timeout.
+
+The host freezes all container processes before returning a cell result, and
+resumes them only for the next cell. Model output is untrusted: a forged JSON
+reply cannot leave code running between steps. Pause/resume operations share
+the cell deadline; timeout, protocol or freezer failures destroy the sandbox
+and terminate the diagnosis without further model retries. Ordinary Python
+errors can still be corrected in the same stateful sandbox.
+
+The executor accepts exactly one fenced Python block and rejects bare responses,
+mixed prose, invalid Python and IPython shell/magic syntax. This validation is
+not a Python security boundary: all accepted code still runs in the container.
+If Docker or the image is unavailable, execution fails closed. There is no
+host execution mode. `OPENRCA_SANDBOX_IMAGE` can select an operator-built trusted
+image containing the same worker and dependencies; runtime never pulls images.
+Keep Docker and the host kernel patched; use a dedicated VM or a stronger
+container runtime for hostile multi-tenant workloads. Treat telemetry and
+execution results as untrusted model inputs even with execution isolation.
+
+Security regression tests (no API credentials or model calls required):
+
+```bash
+python -m unittest discover -s tests -v
+# Requires the running Docker Engine and the image built above:
+OPENRCA_SANDBOX_INTEGRATION=1 python -m unittest discover -s tests -v
+```
+
+The opt-in integration tests verify pandas analysis and persistent state, host
+secret isolation, read-only data, blocked network access, timeout cleanup, and
+oversized output. Without the opt-in flag they are explicitly skipped.
+
 ```bash
 python -m rca.{TESTS} --dataset {DATASET_NAME}
 # Optional tests: run_agent_standard, run_baseline_balanced, run_baseline_oracle

@@ -1,9 +1,10 @@
 import re
+import ast
 import time
 from datetime import datetime
 from rca.api_router import get_chat_completion
 import tiktoken
-import traceback
+from rca.baseline.rca_agent.sandbox import MAX_CODE_BYTES, SandboxedKernel, SandboxTerminatedError
 
 system = """You are a DevOps assistant for writing Python code to answer DevOps questions. For each question, you need to write Python code to solve it by retrieving and processing telemetry data of the target system. Your generated Python code will be automatically submitted to a IPython Kernel. The execution result output in IPython Kernel will be used as the answer to the question.
 
@@ -47,7 +48,36 @@ rule = """## RULES OF PYTHON CODE WRITING:
 10. All issues use **UTC+8** time. However, the local machine's default timezone is unknown. Please use `pytz.timezone('Asia/Shanghai')` to explicityly set the timezone to UTC+8.
 """
 
-def execute_act(instruction:str, background:str, history, attempt, kernel, logger) -> str:
+def extract_python(response: str) -> str:
+    """Accept one complete Python fence, never arbitrary prose or IPython syntax.
+
+    This is input validation, not a security sandbox; valid Python still needs
+    the isolated container even when it looks like ordinary pandas code.
+    """
+    if not isinstance(response, str) or len(response.encode("utf-8")) > MAX_CODE_BYTES:
+        raise ValueError("Expected a Python code block within the size limit")
+    match = re.fullmatch(r"\s*```python[ \t]*\r?\n(.*?)\r?\n```\s*", response, re.DOTALL)
+    if match is None or not match.group(1).strip():
+        raise ValueError("Expected exactly one fenced Python code block")
+    code = match.group(1).strip()
+    tree = ast.parse(code)
+    for node in ast.walk(tree):
+        modules = []
+        if isinstance(node, ast.Import):
+            modules = [alias.name for alias in node.names]
+        elif isinstance(node, ast.ImportFrom):
+            modules = [node.module or ""]
+        if any(module.split(".")[0] in {"matplotlib", "seaborn"} for module in modules):
+            raise ValueError("Provide text-based results instead of visualizations")
+    return code
+
+
+def execute_act(instruction:str, background:str, history, attempt, kernel: SandboxedKernel, logger) -> str:
+
+    if not isinstance(kernel, SandboxedKernel):
+        raise TypeError("Executor requires a SandboxedKernel; host execution is disabled")
+    if kernel.closed:
+        raise SandboxTerminatedError("Sandbox is closed; current diagnosis must stop")
 
     logger.debug("Start execution")
     t1 = datetime.now()
@@ -55,7 +85,6 @@ def execute_act(instruction:str, background:str, history, attempt, kernel, logge
         history = [
                 {'role': 'system', 'content': system.format(rule=rule, background=background, format=format)},
             ]
-    code_pattern = re.compile(r"```python\n(.*?)\n```", re.DOTALL)
     code = ""
     result = ""
     retry_flag = False
@@ -75,16 +104,15 @@ def execute_act(instruction:str, background:str, history, attempt, kernel, logge
                     messages=prompt,
                 )
                 retry_flag = False
-            if re.search(code_pattern, response):
-                code = re.search(code_pattern, response).group(1).strip()
-            else:
-                code = response.strip()
-            logger.debug(f"Raw Code:\n{code}")
-            if "import matplotlib" in code or "import seaborn" in code:
-                logger.warning("The generated visualization code detected.")
-                prompt.append({'role': 'assistant', 'content': code})
-                prompt.append({'role': 'user', 'content': "You are not permitted to generate visualizations. If the instruction requires visualization, please provide the text-based results."})
+            try:
+                code = extract_python(response)
+            except (ValueError, SyntaxError) as error:
+                logger.warning(f"Invalid executor code: {error}")
+                prompt.append({'role': 'assistant', 'content': response})
+                prompt.append({'role': 'user', 'content': f"{error}. Please return one valid Python code block."})
+                retry_flag = True
                 continue
+            logger.debug(f"Raw Code:\n{code}")
             exec = kernel.run_cell(code)
             status = exec.success
             if status:
@@ -117,7 +145,7 @@ def execute_act(instruction:str, background:str, history, attempt, kernel, logge
                 
                 return code, result, status, history
             else:
-                result = ''.join(traceback.format_exception(type(exec.error_in_exec), exec.error_in_exec, exec.error_in_exec.__traceback__))
+                result = exec.error
                 t2 = datetime.now()
                 logger.warning(f"Execution failed. Error message: {result}")
                 logger.debug(f"Execution finished. Time cost: {t2-t1}")
@@ -125,6 +153,8 @@ def execute_act(instruction:str, background:str, history, attempt, kernel, logge
                 prompt.append({'role': 'user', 'content': f"Execution failed:\n{result}\nPlease revise your code and retry."})
                 retry_flag = True
             
+        except (SandboxTerminatedError, TimeoutError):
+            raise
         except Exception as e:
             logger.error(e)
             time.sleep(1)
@@ -133,4 +163,4 @@ def execute_act(instruction:str, background:str, history, attempt, kernel, logge
     logger.error(f"Max try reached. Please check the history. Time cost: {t2-t1}")
     err = "The Executor failed to complete the instruction, please re-write a new instruction for Executor."
     history.extend([{'role': 'assistant', 'content': err}])
-    return err, err, True, history
+    return err, err, False, history
