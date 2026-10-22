@@ -1,6 +1,6 @@
 import json
 import re
-from IPython.terminal.embed import InteractiveShellEmbed
+from rca.baseline.rca_agent.sandbox import SandboxedKernel, SandboxTerminatedError
 
 from rca.baseline.rca_agent.executor import execute_act
 
@@ -58,6 +58,13 @@ Please first review your previous reasoning process to infer an exact answer of 
 Note that all the root cause components and reasons must be selected from the provided candidates. Do not reply 'unknown' or 'null' or 'not found' in the JSON. Do not be too conservative in selecting the root cause components and reasons. Be decisive to infer a possible answer based on your current observation."""
 
 def control_loop(objective:str, plan:str, ap, bp, logger, max_step = 15, max_turn = 3) -> str:
+    # All return paths, API errors and external timeouts dispose of the container.
+    # There is deliberately no in-process execution fallback.
+    with SandboxedKernel() as kernel:
+        return _control_loop(objective, plan, ap, bp, logger, max_step, max_turn, kernel)
+
+
+def _control_loop(objective, plan, ap, bp, logger, max_step, max_turn, kernel):
    
     prompt = [
             {'role': 'system', 'content': system.format(objective=objective,
@@ -71,17 +78,15 @@ def control_loop(objective:str, plan:str, ap, bp, logger, max_step = 15, max_tur
     trajectory = []
     observation = "Let's begin."
     status = False
-    kernel = InteractiveShellEmbed()
-    init_code = "import pandas as pd\n"+ \
-            "pd.set_option('display.width', 427)\n"+ \
-            "pd.set_option('display.max_columns', 10)\n"
-    kernel.run_cell(init_code)
 
     for step in range(max_step):
         
         note = [{'role': 'user', 'content': f"Continue your reasoning process for the target issue:\n\n{objective}\n\nFollow the rules during issue solving:\n\n{ap.rules}.\n\nResponse format:\n\n{format}"}]
         attempt_actor = []
+        response_raw = ""
         try:
+            if kernel.closed:
+                raise SandboxTerminatedError("Sandbox is closed; current diagnosis must stop")
             response_raw = get_chat_completion(
                 messages=prompt + note,
             )
@@ -100,7 +105,6 @@ def control_loop(objective:str, plan:str, ap, bp, logger, max_step = 15, max_tur
             logger.info('-'*80 + '\n' + f"### Step[{step+1}]\nAnalysis: {analysis}\nInstruction: {instruction}" + '\n' + '-'*80)
 
             if completed == "True":
-                kernel.reset()
                 prompt.append({'role': 'assistant', 'content': response_raw})
                 prompt.append({'role': 'user', 'content': summary.format(objective=objective,
                                                                                 cand=bp.cand)})
@@ -124,17 +128,21 @@ def control_loop(objective:str, plan:str, ap, bp, logger, max_step = 15, max_tur
             prompt.append({'role': 'assistant', 'content': response_raw})
             prompt.append({'role': 'user', 'content': observation})
 
+        except SandboxTerminatedError as error:
+            logger.error(f"Diagnosis stopped: {error}")
+            prompt.append({'role': 'user', 'content': f"Sandbox execution terminated: {error}"})
+            return "Sandbox execution terminated. No root cause found.", trajectory, prompt
+        except TimeoutError:
+            raise
         except Exception as e:
             logger.error(e)
             prompt.append({'role': 'assistant', 'content': response_raw})
             prompt.append({'role': 'user', 'content': f"{str(e)}\nPlease provide your analysis in requested JSON format."})
             if 'context_length_exceeded' in str(e):
                 logger.warning("Token length exceeds the limit.")
-                kernel.reset()
                 return "Token length exceeds. No root cause found.", trajectory, prompt
 
     logger.warning("Max steps reached. Please check the history.")
-    kernel.reset()
     final_prompt = {'role': 'user', 'content': summary.format(objective=objective,
                                                                     cand=bp.cand).replace('Now, you have decided to finish your reasoning process. ', 'Now, the maximum steps of your reasoning have been reached. ')}
     if prompt[-1]['role'] == 'user':
